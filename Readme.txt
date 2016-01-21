@@ -6,12 +6,13 @@ The package barn_test contains portable tools
 for simple small scale unit testing.
 
 
-if it really pays off:
-TODO test-functions for functions with side-effects. class StatusTest;
-TODO test-functions that test for exceptions. test_exceptions(...)
-TODO test functions for speed
-TODO test-function that aggregates all test functions. test_function(...)
+* if it really pays off:
+* TODO test-functions for functions with side-effects. class StatusTest;
+* TODO test-functions that test for exceptions. test_exceptions(...)
+* TODO test functions for speed
+* TODO test-function that aggregates all test functions. test_function(...)
 
+* TODO compile doxygen doc
 
 
 author: langenhagen (barn07@web.de)
