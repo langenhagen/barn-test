@@ -8,8 +8,12 @@ for simple small scale unit testing.
 
 if it really pays off:
 TODO test-functions for functions with side-effects. class StatusTest;
+lookat:
+    http://stackoverflow.com/questions/16868129/how-to-store-variadic-template-arguments
 TODO test-functions that test for exceptions. test_exceptions(...)
 TODO test functions for speed
+lookat:
+    http://stackoverflow.com/questions/255645/how-can-i-count-operations-in-c
 TODO test-function that aggregates all test functions. test_function(...)
 
 
