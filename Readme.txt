@@ -12,8 +12,6 @@ TODO test-functions that test for exceptions. test_exceptions(...)
 TODO test functions for speed
 TODO test-function that aggregates all test functions. test_function(...)
 
-TODO compile doxygen doc
-
 
 author: langenhagen (barn07@web.de)
 version: 160121
