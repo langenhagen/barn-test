@@ -56,6 +56,9 @@ tester.test("Run 2", { 1,13,15 }, 13, 99);      // fails
 
 // ...
 
+tester.write_test_series_summary();
+
+
 
 // To test a method on an object, I'm afraid you have to wrap the method call into a lambda:
 
