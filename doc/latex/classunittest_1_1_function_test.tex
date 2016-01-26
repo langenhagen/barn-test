@@ -15,8 +15,31 @@
 \item 
 {\footnotesize template$<$typename T $>$ }\\std\+::pair$<$ bool, Result\+Type $>$ \hyperlink{classunittest_1_1_function_test_abd6a6fe7f829fbedb7fdec63a61ed122}{test} (const std\+::string \&, const T \&, const Arg\+Types \&...) const  =delete
 \item 
-std\+::pair$<$ bool, Result\+Type $>$ \hyperlink{classunittest_1_1_function_test_a203c77334e047dd7a5399a5c97f28898}{test} (const std\+::string \&test\+\_\+name, const Result\+Type \&expected\+\_\+result, const Arg\+Types \&...args) const 
-\end{DoxyCompactItemize}
+Test\+Return\+Type \hyperlink{classunittest_1_1_function_test_adeb82aea0d7e1975da9f55d5170d31d6}{test} (const std\+::string \&test\+\_\+name, const Result\+Type \&expected\+\_\+result, const Arg\+Types \&...args)
+\item 
+bool \hyperlink{classunittest_1_1_function_test_a1263b315394a9d4d8bf2a7f5e66be9c6}{write\+\_\+test\+\_\+series\+\_\+summary} () const 
+\item 
+unsigned int \hyperlink{classunittest_1_1_function_test_a377bc6b2de27ae65ca82f7f063691745}{n\+\_\+tests} () const \hypertarget{classunittest_1_1_function_test_a377bc6b2de27ae65ca82f7f063691745}{}\label{classunittest_1_1_function_test_a377bc6b2de27ae65ca82f7f063691745}
+
+\begin{DoxyCompactList}\small\item\em Returns the number of tests. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classunittest_1_1_function_test_acc025a166bf4840d426e2a9f0b639297}{n\+\_\+passed\+\_\+tests} () const \hypertarget{classunittest_1_1_function_test_acc025a166bf4840d426e2a9f0b639297}{}\label{classunittest_1_1_function_test_acc025a166bf4840d426e2a9f0b639297}
+
+\begin{DoxyCompactList}\small\item\em Returns the number of passed tests. \end{DoxyCompactList}\item 
+bool \hyperlink{classunittest_1_1_function_test_a986ab165971bbf218117ef36a9b6cda0}{is\+\_\+last\+\_\+test\+\_\+passed} () const \hypertarget{classunittest_1_1_function_test_a986ab165971bbf218117ef36a9b6cda0}{}\label{classunittest_1_1_function_test_a986ab165971bbf218117ef36a9b6cda0}
+
+\begin{DoxyCompactList}\small\item\em Returns if the last test whas passed. Also returns T\+R\+UE if no test was executed. \end{DoxyCompactList}\item 
+Test\+Duration\+Type \hyperlink{classunittest_1_1_function_test_a63136c98f5f9f8189ff710112bd55a08}{last\+\_\+invocation\+\_\+duration} () const \hypertarget{classunittest_1_1_function_test_a63136c98f5f9f8189ff710112bd55a08}{}\label{classunittest_1_1_function_test_a63136c98f5f9f8189ff710112bd55a08}
+
+\begin{DoxyCompactList}\small\item\em The duration of the last function invocation. \end{DoxyCompactList}\item 
+Result\+Type \hyperlink{classunittest_1_1_function_test_acd04aafd9cb3bb7ee22876e1e3979a11}{last\+\_\+test\+\_\+result} () const \hypertarget{classunittest_1_1_function_test_acd04aafd9cb3bb7ee22876e1e3979a11}{}\label{classunittest_1_1_function_test_acd04aafd9cb3bb7ee22876e1e3979a11}
+
+\begin{DoxyCompactList}\small\item\em Returns a assignment-\/copy of the result of the last test. \end{DoxyCompactList}\item 
+bool \hyperlink{classunittest_1_1_function_test_ac54d10d4dba64b9545ae7b2d30ae3d48}{is\+\_\+all\+\_\+tests\+\_\+passed} () const \hypertarget{classunittest_1_1_function_test_ac54d10d4dba64b9545ae7b2d30ae3d48}{}\label{classunittest_1_1_function_test_ac54d10d4dba64b9545ae7b2d30ae3d48}
+
+\begin{DoxyCompactList}\small\item\em Indicates whether every test so far passed or not. Also returns T\+R\+UE if no test was executed. \end{DoxyCompactList}\item 
+Test\+Duration\+Type \hyperlink{classunittest_1_1_function_test_a09ae97b06e34d144f243dcef00ead1a9}{accumulated\+\_\+invocation\+\_\+durations} () const \hypertarget{classunittest_1_1_function_test_a09ae97b06e34d144f243dcef00ead1a9}{}\label{classunittest_1_1_function_test_a09ae97b06e34d144f243dcef00ead1a9}
+
+\begin{DoxyCompactList}\small\item\em The accumulated execution time for all function invocations. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -101,15 +124,15 @@ Constructor \#3 for the function tester. Use with simple return types. Sets the 
 \item[{const Arg\+Types \&}]{...}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [delete]}}\hypertarget{classunittest_1_1_function_test_abd6a6fe7f829fbedb7fdec63a61ed122}{}\label{classunittest_1_1_function_test_abd6a6fe7f829fbedb7fdec63a61ed122}
-Prevents callers from handing expected result of wrong type. This prevents false negatives through conversion errors, like double to int truncation. Consider a test on a function int()\{ return 1 \}\+: tester.\+test(\char`\"{}1\char`\"{}, 1.\+2); won\textquotesingle{}t compile (otherwise, it would convert to 1 which then yielded OK) tester.\+test(\char`\"{}2\char`\"{}, 1); compiles. \index{unittest\+::\+Function\+Test@{unittest\+::\+Function\+Test}!test@{test}}
+This deleted function prevents callers from handing expected result of wrong type. This prevents false negatives through conversion errors, like double to int truncation. Consider a test on a function int()\{ return 1 \}\+: tester.\+test(\char`\"{}1\char`\"{}, 1.\+2); won\textquotesingle{}t compile (otherwise, it would convert to 1 which then yielded OK) tester.\+test(\char`\"{}2\char`\"{}, 1); compiles. \index{unittest\+::\+Function\+Test@{unittest\+::\+Function\+Test}!test@{test}}
 \index{test@{test}!unittest\+::\+Function\+Test@{unittest\+::\+Function\+Test}}
-\subsubsection[{\texorpdfstring{test(const std\+::string \&test\+\_\+name, const Result\+Type \&expected\+\_\+result, const Arg\+Types \&...\+args) const }{test(const std::string &test_name, const ResultType &expected_result, const ArgTypes &...args) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result\+Type , typename... Arg\+Types$>$ std\+::pair$<$bool, Result\+Type$>$ {\bf unittest\+::\+Function\+Test}$<$ Result\+Type, Arg\+Types $>$\+::test (
+\subsubsection[{\texorpdfstring{test(const std\+::string \&test\+\_\+name, const Result\+Type \&expected\+\_\+result, const Arg\+Types \&...\+args)}{test(const std::string &test_name, const ResultType &expected_result, const ArgTypes &...args)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result\+Type , typename... Arg\+Types$>$ Test\+Return\+Type {\bf unittest\+::\+Function\+Test}$<$ Result\+Type, Arg\+Types $>$\+::test (
 \begin{DoxyParamCaption}
 \item[{const std\+::string \&}]{test\+\_\+name, }
 \item[{const Result\+Type \&}]{expected\+\_\+result, }
 \item[{const Arg\+Types \&...}]{args}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classunittest_1_1_function_test_a203c77334e047dd7a5399a5c97f28898}{}\label{classunittest_1_1_function_test_a203c77334e047dd7a5399a5c97f28898}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classunittest_1_1_function_test_adeb82aea0d7e1975da9f55d5170d31d6}{}\label{classunittest_1_1_function_test_adeb82aea0d7e1975da9f55d5170d31d6}
 Unit test on the function that is connected to the tester. Tests whether the return-\/value of a given function invoked with given parameters is equal to a given value and takes care of possibly occuring exceptions. Also measures the time the function execution takes and writes the results of the test to a given output-\/stream. Checks also for exceptions and reports them to the output stream. In case of error the object\textquotesingle{}s flag .verbose in conjunction with a valid .result\+\_\+to\+\_\+string\+\_\+function can be used to write more sophisticated output. 
 \begin{DoxyParams}{Parameters}
 {\em test\+\_\+name} & A human-\/readable alias of the test that will be written into the stream. \\
@@ -121,6 +144,16 @@ Unit test on the function that is connected to the tester. Tests whether the ret
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 A pair$<$bool, Result\+Type$>$. The first value represents whether the test was successful or not. The second value is a copy of the actual result of the function invocation. 
+\end{DoxyReturn}
+\index{unittest\+::\+Function\+Test@{unittest\+::\+Function\+Test}!write\+\_\+test\+\_\+series\+\_\+summary@{write\+\_\+test\+\_\+series\+\_\+summary}}
+\index{write\+\_\+test\+\_\+series\+\_\+summary@{write\+\_\+test\+\_\+series\+\_\+summary}!unittest\+::\+Function\+Test@{unittest\+::\+Function\+Test}}
+\subsubsection[{\texorpdfstring{write\+\_\+test\+\_\+series\+\_\+summary() const }{write_test_series_summary() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result\+Type , typename... Arg\+Types$>$ bool {\bf unittest\+::\+Function\+Test}$<$ Result\+Type, Arg\+Types $>$\+::write\+\_\+test\+\_\+series\+\_\+summary (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classunittest_1_1_function_test_a1263b315394a9d4d8bf2a7f5e66be9c6}{}\label{classunittest_1_1_function_test_a1263b315394a9d4d8bf2a7f5e66be9c6}
+After running a series of \hyperlink{classunittest_1_1_function_test_abd6a6fe7f829fbedb7fdec63a61ed122}{Function\+Test\+::test()} invocations, this method can be called to write summarized information to the output stream. \begin{DoxyReturn}{Returns}
+T\+R\+UE if all tests until now are passed or no test has been executed. F\+A\+L\+SE otherwise. 
 \end{DoxyReturn}
 
 

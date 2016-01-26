@@ -39,7 +39,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -109,8 +108,38 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abd6a6fe7f829fbedb7fdec63a61ed122"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:abd6a6fe7f829fbedb7fdec63a61ed122"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; bool, ResultType &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classunittest_1_1_function_test.html#abd6a6fe7f829fbedb7fdec63a61ed122">test</a> (const std::string &amp;, const T &amp;, const ArgTypes &amp;...) const  =delete</td></tr>
 <tr class="separator:abd6a6fe7f829fbedb7fdec63a61ed122"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a203c77334e047dd7a5399a5c97f28898"><td class="memItemLeft" align="right" valign="top">std::pair&lt; bool, ResultType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1_function_test.html#a203c77334e047dd7a5399a5c97f28898">test</a> (const std::string &amp;test_name, const ResultType &amp;expected_result, const ArgTypes &amp;...args) const </td></tr>
-<tr class="separator:a203c77334e047dd7a5399a5c97f28898"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adeb82aea0d7e1975da9f55d5170d31d6"><td class="memItemLeft" align="right" valign="top">TestReturnType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1_function_test.html#adeb82aea0d7e1975da9f55d5170d31d6">test</a> (const std::string &amp;test_name, const ResultType &amp;expected_result, const ArgTypes &amp;...args)</td></tr>
+<tr class="separator:adeb82aea0d7e1975da9f55d5170d31d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1263b315394a9d4d8bf2a7f5e66be9c6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1_function_test.html#a1263b315394a9d4d8bf2a7f5e66be9c6">write_test_series_summary</a> () const </td></tr>
+<tr class="separator:a1263b315394a9d4d8bf2a7f5e66be9c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a377bc6b2de27ae65ca82f7f063691745"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a377bc6b2de27ae65ca82f7f063691745"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1_function_test.html#a377bc6b2de27ae65ca82f7f063691745">n_tests</a> () const </td></tr>
+<tr class="memdesc:a377bc6b2de27ae65ca82f7f063691745"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of tests. <br /></td></tr>
+<tr class="separator:a377bc6b2de27ae65ca82f7f063691745"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc025a166bf4840d426e2a9f0b639297"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acc025a166bf4840d426e2a9f0b639297"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1_function_test.html#acc025a166bf4840d426e2a9f0b639297">n_passed_tests</a> () const </td></tr>
+<tr class="memdesc:acc025a166bf4840d426e2a9f0b639297"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of passed tests. <br /></td></tr>
+<tr class="separator:acc025a166bf4840d426e2a9f0b639297"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a986ab165971bbf218117ef36a9b6cda0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a986ab165971bbf218117ef36a9b6cda0"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1_function_test.html#a986ab165971bbf218117ef36a9b6cda0">is_last_test_passed</a> () const </td></tr>
+<tr class="memdesc:a986ab165971bbf218117ef36a9b6cda0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if the last test whas passed. Also returns TRUE if no test was executed. <br /></td></tr>
+<tr class="separator:a986ab165971bbf218117ef36a9b6cda0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63136c98f5f9f8189ff710112bd55a08"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a63136c98f5f9f8189ff710112bd55a08"></a>
+TestDurationType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1_function_test.html#a63136c98f5f9f8189ff710112bd55a08">last_invocation_duration</a> () const </td></tr>
+<tr class="memdesc:a63136c98f5f9f8189ff710112bd55a08"><td class="mdescLeft">&#160;</td><td class="mdescRight">The duration of the last function invocation. <br /></td></tr>
+<tr class="separator:a63136c98f5f9f8189ff710112bd55a08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd04aafd9cb3bb7ee22876e1e3979a11"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acd04aafd9cb3bb7ee22876e1e3979a11"></a>
+ResultType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1_function_test.html#acd04aafd9cb3bb7ee22876e1e3979a11">last_test_result</a> () const </td></tr>
+<tr class="memdesc:acd04aafd9cb3bb7ee22876e1e3979a11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a assignment-copy of the result of the last test. <br /></td></tr>
+<tr class="separator:acd04aafd9cb3bb7ee22876e1e3979a11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac54d10d4dba64b9545ae7b2d30ae3d48"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac54d10d4dba64b9545ae7b2d30ae3d48"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1_function_test.html#ac54d10d4dba64b9545ae7b2d30ae3d48">is_all_tests_passed</a> () const </td></tr>
+<tr class="memdesc:ac54d10d4dba64b9545ae7b2d30ae3d48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether every test so far passed or not. Also returns TRUE if no test was executed. <br /></td></tr>
+<tr class="separator:ac54d10d4dba64b9545ae7b2d30ae3d48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09ae97b06e34d144f243dcef00ead1a9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a09ae97b06e34d144f243dcef00ead1a9"></a>
+TestDurationType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1_function_test.html#a09ae97b06e34d144f243dcef00ead1a9">accumulated_invocation_durations</a> () const </td></tr>
+<tr class="memdesc:a09ae97b06e34d144f243dcef00ead1a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The accumulated execution time for all function invocations. <br /></td></tr>
+<tr class="separator:a09ae97b06e34d144f243dcef00ead1a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -321,11 +350,11 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Prevents callers from handing expected result of wrong type. This prevents false negatives through conversion errors, like double to int truncation. Consider a test on a function int(){ return 1 }: tester.test("1", 1.2); won't compile (otherwise, it would convert to 1 which then yielded OK) tester.test("2", 1); compiles. </p>
+<p>This deleted function prevents callers from handing expected result of wrong type. This prevents false negatives through conversion errors, like double to int truncation. Consider a test on a function int(){ return 1 }: tester.test("1", 1.2); won't compile (otherwise, it would convert to 1 which then yielded OK) tester.test("2", 1); compiles. </p>
 
 </div>
 </div>
-<a class="anchor" id="a203c77334e047dd7a5399a5c97f28898"></a>
+<a class="anchor" id="adeb82aea0d7e1975da9f55d5170d31d6"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -335,7 +364,7 @@ template&lt;typename ResultType , typename... ArgTypes&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::pair&lt;bool, ResultType&gt; <a class="el" href="classunittest_1_1_function_test.html">unittest::FunctionTest</a>&lt; ResultType, ArgTypes &gt;::test </td>
+          <td class="memname">TestReturnType <a class="el" href="classunittest_1_1_function_test.html">unittest::FunctionTest</a>&lt; ResultType, ArgTypes &gt;::test </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>test_name</em>, </td>
@@ -355,7 +384,7 @@ template&lt;typename ResultType , typename... ArgTypes&gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> const</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -373,6 +402,32 @@ template&lt;typename ResultType , typename... ArgTypes&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A pair&lt;bool, ResultType&gt;. The first value represents whether the test was successful or not. The second value is a copy of the actual result of the function invocation. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1263b315394a9d4d8bf2a7f5e66be9c6"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ResultType , typename... ArgTypes&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classunittest_1_1_function_test.html">unittest::FunctionTest</a>&lt; ResultType, ArgTypes &gt;::write_test_series_summary </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>After running a series of <a class="el" href="classunittest_1_1_function_test.html#abd6a6fe7f829fbedb7fdec63a61ed122">FunctionTest::test()</a> invocations, this method can be called to write summarized information to the output stream. </p><dl class="section return"><dt>Returns</dt><dd>TRUE if all tests until now are passed or no test has been executed. FALSE otherwise. </dd></dl>
 
 </div>
 </div>

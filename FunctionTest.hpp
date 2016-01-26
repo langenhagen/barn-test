@@ -20,6 +20,7 @@ FunctionTest<std::vector<int>, int, int> tester(fun, comp, tostring);
 
 tester.test("Run 1", { 1,13,15 }, 13, 15);
 tester.test("Run 2", { 1,13,15 }, 13, 99);
+tester.write_test_series_summary();
 
 ###################################################################################################
 *
@@ -162,7 +163,7 @@ namespace unittest {
 
     public: // methods
 
-        /** Prevents callers from handing expected result of wrong type. 
+        /** This deleted function prevents callers from handing expected result of wrong type. 
         This prevents false negatives through conversion errors, like double to int truncation. 
         Consider a test on a function int(){ return 1 }:
         tester.test("1", 1.2);    won't compile (otherwise, it would convert to 1 which then yielded OK)
@@ -245,7 +246,7 @@ namespace unittest {
         }
 
         
-        /** After running a series of FunctionTest::test() invocations, this method cann be called to write
+        /** After running a series of FunctionTest::test() invocations, this method can be called to write
         summarized information to the output stream.
         @return TRUE if all tests until now are passed or no test has been executed.
                 FALSE otherwise.
