@@ -43,7 +43,7 @@ FunctionTest<int, int, int> tester( fun);
 *
 *
 * @author langenhagen
-* @version 160121
+* @version 160126
 ******************************************************************************/
 #pragma once
 
@@ -51,6 +51,7 @@ FunctionTest<int, int, int> tester( fun);
 #include <exception>
 #include <iostream>
 #include <string>
+#include <tuple>
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -58,6 +59,22 @@ FunctionTest<int, int, int> tester( fun);
 
 
 namespace unittest {
+
+
+    // Forward declarations
+
+    template< typename... ArgTypes, typename T>
+    constexpr auto create_function_test(T function, std::ostream& os);
+    
+    template< typename ResultType, typename DurationType>
+    constexpr auto& get_passed( std::tuple<bool, ResultType, DurationType>& test_return_tuple);
+    
+    template< typename ResultType, typename DurationType>
+    constexpr auto& get_result( std::tuple<bool, ResultType, DurationType>& test_return_tuple);
+    
+    template< typename ResultType, typename DurationType>
+    constexpr auto& get_duration( std::tuple<bool, ResultType, DurationType>& test_return_tuple);
+
 
     /** FunctionTest unit testing class wich is capable of invoking arbitrary functions with a return value
     and comparing them to anticipated values. Measures the run-time of the function and writes unit test results to a stream.
@@ -68,13 +85,23 @@ namespace unittest {
         using FunctionType = const std::function<ResultType(ArgTypes...)>;
         using ComparatorFunctionType = const std::function<bool(const ResultType&, const ResultType&)>;
         using ToStringFunctionType = const std::function<std::string(const ResultType&)>;
+        using TestDurationType = std::chrono::milliseconds;
+        using TestReturnType = std::tuple<bool, ResultType, TestDurationType>;
 
     private: // vars
 
-        const FunctionType fun_;                          ///< The function.
-        const ComparatorFunctionType comp_;               ///< The result comparison function.
-        const ToStringFunctionType to_string_function_;   ///< The to-string function for ResultType.
-        std::ostream& os_;                                ///< The output stream.
+        const FunctionType fun_;                                                    ///< The function.
+        const ComparatorFunctionType comp_;                                         ///< The result comparison function.
+        const ToStringFunctionType to_string_function_;                             ///< The to-string function for ResultType.
+        std::ostream& os_;                                                          ///< The output stream.
+
+        unsigned int n_tests_ = 0;                                                  ///< Number of tests.
+        unsigned int n_passed_tests_ = 0;                                           ///< Number of passed tests.
+        bool is_last_test_passed_ = true;                                           ///< indicates whether the last test passed or not.
+        TestDurationType last_invocation_duration_ = TestDurationType(0);           ///< The duration of the last function invocation.
+        ResultType last_test_result_;                                               ///< Assignment copy result of the last test.
+        bool is_all_tests_passed_ = true;                                           ///< Indicates whether every test so far passed or not.
+        TestDurationType accumulated_invocation_durations_ = TestDurationType(0);   ///< The accumulated execution time for all function invocations.
 
     public: // vars
 
@@ -158,12 +185,14 @@ namespace unittest {
         @return A pair<bool, ResultType>. The first value represents whether the test was successful or not.
         The second value is a copy of the actual result of the function invocation.
         */
-        std::pair<bool, ResultType> test(const std::string& test_name,
+        TestReturnType test(
+            const std::string& test_name,
             const ResultType& expected_result,
-            const ArgTypes&... args) const {
+            const ArgTypes&... args) {
 
-            std::pair<bool, ResultType> ret;
-            ret.first = false;
+            TestReturnType ret;
+            get_passed(ret) = false;
+
             std::string output = "TESTING " + test_name + ": ";
             output.resize(output_line_length, '.');
             os_ << output << " ";
@@ -172,14 +201,21 @@ namespace unittest {
                 using namespace std::chrono;
                 const auto clock_start = steady_clock::now();
                 const ResultType result = fun_(args...);
-                ret.second = result;
+                get_result(ret) = result;
                 const auto ms = duration_cast< milliseconds>(steady_clock::now() - clock_start);
 
                 if (comp_(result, expected_result)) {
+                    ++n_passed_tests_;
+                    is_last_test_passed_ = true;
+
                     os_ << "OK (" << ms.count() << " ms)\n";
-                    ret.first = true;
+                    
+                    get_passed(ret) = true;
                 }
                 else {
+                    is_last_test_passed_ = false;
+                    is_all_tests_passed_ = false;
+
                     os_ << "FAILED (" << ms.count() << " ms)\n";
 
                     if (verbose) {
@@ -188,6 +224,13 @@ namespace unittest {
                             << ".\n";
                     }
                 }
+
+                ++n_tests_;
+                last_test_result_ = result;
+                last_invocation_duration_ = ms;
+                get_duration(ret) = ms;
+                accumulated_invocation_durations_ += ms;
+
             }
             catch (std::exception& ex) {
                 os_ << "EXCEPTION\n"
@@ -197,8 +240,52 @@ namespace unittest {
                 os_ << "EXCEPTION\n"
                     << "unknown\n";
             }
+
             return ret;
         }
+
+        
+        /** After running a series of FunctionTest::test() invocations, this method cann be called to write
+        summarized information to the output stream.
+        @return TRUE if all tests until now are passed or no test has been executed.
+                FALSE otherwise.
+        */
+        bool write_test_series_summary() const {
+            const auto all_passed = is_all_tests_passed();
+            const auto ms = accumulated_invocation_durations().count();
+
+            std::string output;
+            if (all_passed)  output = "+++ TEST SERIES PASSED +++  :)";
+            else             output = "--- SOME TESTS FAILED  ---  :(((";
+
+            os_ << output << "       (" << n_passed_tests() << "/" << n_tests() << ")   (accumulated: " << ms << " ms)\n\n";
+
+            return all_passed;
+        }
+
+
+    public: // getters
+
+        /// Returns the number of tests.
+        inline unsigned int n_tests() const { return n_tests_; }
+
+        /// Returns the number of passed tests.
+        inline unsigned int n_passed_tests() const { return n_passed_tests_; }
+
+        /// Returns if the last test whas passed. Also returns TRUE if no test was executed.
+        inline bool is_last_test_passed() const { retun is_last_test_passed_; }
+
+        /// The duration of the last function invocation.
+        inline TestDurationType last_invocation_duration() const { return last_invocation_duration_; }
+
+        /// Returns a assignment-copy of the result of the last test.
+        inline ResultType last_test_result() const { return last_test_result_; }                                
+
+        /// Indicates whether every test so far passed or not. Also returns TRUE if no test was executed.
+        inline bool is_all_tests_passed() const { return is_all_tests_passed_; }
+
+        /// The accumulated execution time for all function invocations.
+        inline TestDurationType accumulated_invocation_durations() const { return accumulated_invocation_durations_; }
 
     }; // END class FunctionTest
 
@@ -216,6 +303,24 @@ namespace unittest {
     template< typename... ArgTypes, typename T>
     constexpr auto create_function_test(T function, std::ostream& os = std::cout) {
         return FunctionTest< decltype(function(ArgTypes{}...)), ArgTypes...>(function, os);
+    }
+
+    /// Returns the boolean 'passed' value from a FunctionTest::test() method return value.
+    template< typename ResultType, typename DurationType>
+    constexpr auto& get_passed( std::tuple<bool, ResultType, DurationType>& test_return_tuple) {
+        return get<0>(test_return_tuple);
+    }
+
+    /// Returns the tested functions return value from a FunctionTest::test() method return value.
+    template< typename ResultType, typename DurationType>
+    constexpr auto& get_result( std::tuple<bool, ResultType, DurationType>& test_return_tuple) {
+        return get<1>(test_return_tuple);
+    }
+
+    /// Returns the tested functions duration from a FunctionTest::test() method return value.
+    template< typename ResultType, typename DurationType>
+    constexpr auto& get_duration( std::tuple<bool, ResultType, DurationType>& test_return_tuple) {
+        return get<2>(test_return_tuple);
     }
 
 } // END namespace unittest
