@@ -132,10 +132,10 @@ namespace unittest {
 
         /// The return type of the RandomizedFunctionTest::test() function.
         struct TestReturnType {
-            unsigned int n_tests                            = 0;                ///< # tests.
-            unsigned int n_passed_tests                     = 0;                ///< # passed tests.
-            DurationType average_invocation_duration        = DurationType(0);  ///< avg function invocation time.
-            DurationType accumulated_invocation_durations   = DurationType(0);  ///< accumulated function invocation time.
+            unsigned int n_tests                            = 0;                ///< Number of tests.
+            unsigned int n_passed_tests                     = 0;                ///< Number of  passed tests.
+            DurationType average_invocation_duration        = DurationType(0);  ///< Average function invocation time.
+            DurationType accumulated_invocation_durations   = DurationType(0);  ///< Accumulated function invocation time.
             std::vector<ErrorCaseType> error_cases;                             ///< Vector of error.
 
             /// Indicates, wether or not each conducted test was correct or not.

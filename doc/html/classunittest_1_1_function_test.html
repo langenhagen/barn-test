@@ -39,6 +39,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -63,6 +64,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -87,8 +89,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classunittest_1_1_function_test-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">unittest::FunctionTest&lt; ResultType, ArgTypes &gt; Class Template Reference</div>  </div>
@@ -97,18 +102,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p><code>#include &lt;<a class="el" href="_function_test_8hpp_source.html">FunctionTest.hpp</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structunittest_1_1_function_test_1_1_test_return_type.html">TestReturnType</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The return type of the <a class="el" href="classunittest_1_1_function_test.html#a25ae63b50e7339b313ed11e0ba1e02dc">test()</a> function.  <a href="structunittest_1_1_function_test_1_1_test_return_type.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a1e71709c1e6f21e812d11a69894c4b64"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1e71709c1e6f21e812d11a69894c4b64"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>FunctionType</b> = const std::function&lt; ResultType(ArgTypes...)&gt;</td></tr>
+<tr class="separator:a1e71709c1e6f21e812d11a69894c4b64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac60bbd8d8089864b1ac087ce0e092721"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac60bbd8d8089864b1ac087ce0e092721"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>ComparatorFunctionType</b> = const std::function&lt; bool(const ResultType &amp;, const ResultType &amp;)&gt;</td></tr>
+<tr class="separator:ac60bbd8d8089864b1ac087ce0e092721"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4fbe91c7839a2485e9b73cdf630be43"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa4fbe91c7839a2485e9b73cdf630be43"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>ToStringFunctionType</b> = const std::function&lt; std::string(const ResultType &amp;)&gt;</td></tr>
+<tr class="separator:aa4fbe91c7839a2485e9b73cdf630be43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08c94f024a60e168319401cf79538919"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a08c94f024a60e168319401cf79538919"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>DurationType</b> = std::chrono::microseconds</td></tr>
+<tr class="separator:a08c94f024a60e168319401cf79538919"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9bb46bed56452a5354848e7d5744c715"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1_function_test.html#a9bb46bed56452a5354848e7d5744c715">FunctionTest</a> (FunctionType function, ComparatorFunctionType comparator, ToStringFunctionType to_string_function, std::ostream &amp;os=std::cout)</td></tr>
-<tr class="separator:a9bb46bed56452a5354848e7d5744c715"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addafa5fd128998c358ef14732d4afeb0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1_function_test.html#addafa5fd128998c358ef14732d4afeb0">FunctionTest</a> (FunctionType function, ComparatorFunctionType comparator, std::ostream &amp;os=std::cout)</td></tr>
-<tr class="separator:addafa5fd128998c358ef14732d4afeb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27a92d51dc33cdd08f025555b3d73de8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1_function_test.html#a27a92d51dc33cdd08f025555b3d73de8">FunctionTest</a> (FunctionType function, std::ostream &amp;os=std::cout)</td></tr>
-<tr class="separator:a27a92d51dc33cdd08f025555b3d73de8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd6a6fe7f829fbedb7fdec63a61ed122"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:abd6a6fe7f829fbedb7fdec63a61ed122"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; bool, ResultType &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classunittest_1_1_function_test.html#abd6a6fe7f829fbedb7fdec63a61ed122">test</a> (const std::string &amp;, const T &amp;, const ArgTypes &amp;...) const  =delete</td></tr>
-<tr class="separator:abd6a6fe7f829fbedb7fdec63a61ed122"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adeb82aea0d7e1975da9f55d5170d31d6"><td class="memItemLeft" align="right" valign="top">TestReturnType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1_function_test.html#adeb82aea0d7e1975da9f55d5170d31d6">test</a> (const std::string &amp;test_name, const ResultType &amp;expected_result, const ArgTypes &amp;...args)</td></tr>
+<tr class="memitem:a02f22a526440d3b556b84b760aea95a2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1_function_test.html#a02f22a526440d3b556b84b760aea95a2">FunctionTest</a> (FunctionType function, ComparatorFunctionType comparator=[](const ResultType &amp;a, const ResultType &amp;b){return a==b;}, ToStringFunctionType to_string_function=[](const ResultType &amp;r){std::stringstream ss;ss&lt;&lt; r;return ss.str();}, std::ostream &amp;os=std::cout)</td></tr>
+<tr class="separator:a02f22a526440d3b556b84b760aea95a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25ae63b50e7339b313ed11e0ba1e02dc"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a25ae63b50e7339b313ed11e0ba1e02dc"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structunittest_1_1_function_test_1_1_test_return_type.html">TestReturnType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classunittest_1_1_function_test.html#a25ae63b50e7339b313ed11e0ba1e02dc">test</a> (const std::string &amp;, const T &amp;, const ArgTypes &amp;...) const  =delete</td></tr>
+<tr class="separator:a25ae63b50e7339b313ed11e0ba1e02dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adeb82aea0d7e1975da9f55d5170d31d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structunittest_1_1_function_test_1_1_test_return_type.html">TestReturnType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1_function_test.html#adeb82aea0d7e1975da9f55d5170d31d6">test</a> (const std::string &amp;test_name, const ResultType &amp;expected_result, const ArgTypes &amp;...args)</td></tr>
 <tr class="separator:adeb82aea0d7e1975da9f55d5170d31d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1263b315394a9d4d8bf2a7f5e66be9c6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1_function_test.html#a1263b315394a9d4d8bf2a7f5e66be9c6">write_test_series_summary</a> () const </td></tr>
 <tr class="separator:a1263b315394a9d4d8bf2a7f5e66be9c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -124,10 +146,10 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1_function_test.html#a986ab165971bbf218117ef36a9b6cda0">is_last_test_passed</a> () const </td></tr>
 <tr class="memdesc:a986ab165971bbf218117ef36a9b6cda0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if the last test whas passed. Also returns TRUE if no test was executed. <br /></td></tr>
 <tr class="separator:a986ab165971bbf218117ef36a9b6cda0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63136c98f5f9f8189ff710112bd55a08"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a63136c98f5f9f8189ff710112bd55a08"></a>
-TestDurationType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1_function_test.html#a63136c98f5f9f8189ff710112bd55a08">last_invocation_duration</a> () const </td></tr>
-<tr class="memdesc:a63136c98f5f9f8189ff710112bd55a08"><td class="mdescLeft">&#160;</td><td class="mdescRight">The duration of the last function invocation. <br /></td></tr>
-<tr class="separator:a63136c98f5f9f8189ff710112bd55a08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51cf647d3cecad46510a90b488648227"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a51cf647d3cecad46510a90b488648227"></a>
+DurationType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1_function_test.html#a51cf647d3cecad46510a90b488648227">last_invocation_duration</a> () const </td></tr>
+<tr class="memdesc:a51cf647d3cecad46510a90b488648227"><td class="mdescLeft">&#160;</td><td class="mdescRight">The duration of the last function invocation. <br /></td></tr>
+<tr class="separator:a51cf647d3cecad46510a90b488648227"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd04aafd9cb3bb7ee22876e1e3979a11"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acd04aafd9cb3bb7ee22876e1e3979a11"></a>
 ResultType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1_function_test.html#acd04aafd9cb3bb7ee22876e1e3979a11">last_test_result</a> () const </td></tr>
 <tr class="memdesc:acd04aafd9cb3bb7ee22876e1e3979a11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a assignment-copy of the result of the last test. <br /></td></tr>
@@ -136,29 +158,40 @@ ResultType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1_function_test.html#ac54d10d4dba64b9545ae7b2d30ae3d48">is_all_tests_passed</a> () const </td></tr>
 <tr class="memdesc:ac54d10d4dba64b9545ae7b2d30ae3d48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether every test so far passed or not. Also returns TRUE if no test was executed. <br /></td></tr>
 <tr class="separator:ac54d10d4dba64b9545ae7b2d30ae3d48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09ae97b06e34d144f243dcef00ead1a9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a09ae97b06e34d144f243dcef00ead1a9"></a>
-TestDurationType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1_function_test.html#a09ae97b06e34d144f243dcef00ead1a9">accumulated_invocation_durations</a> () const </td></tr>
-<tr class="memdesc:a09ae97b06e34d144f243dcef00ead1a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The accumulated execution time for all function invocations. <br /></td></tr>
-<tr class="separator:a09ae97b06e34d144f243dcef00ead1a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a939a7d00636cae278f2b305f9cc9226f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a939a7d00636cae278f2b305f9cc9226f"></a>
+DurationType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1_function_test.html#a939a7d00636cae278f2b305f9cc9226f">accumulated_invocation_durations</a> () const </td></tr>
+<tr class="memdesc:a939a7d00636cae278f2b305f9cc9226f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The accumulated execution time for all function invocations. <br /></td></tr>
+<tr class="separator:a939a7d00636cae278f2b305f9cc9226f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a0eb2680ff0867ff55daffa2b09c90280"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0eb2680ff0867ff55daffa2b09c90280"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1_function_test.html#a0eb2680ff0867ff55daffa2b09c90280">verbose</a> = true</td></tr>
-<tr class="memdesc:a0eb2680ff0867ff55daffa2b09c90280"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether or not show detailed info in case of failures. <br /></td></tr>
-<tr class="separator:a0eb2680ff0867ff55daffa2b09c90280"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af69f9db50f85c841c96d87757719fc37"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af69f9db50f85c841c96d87757719fc37"></a>
+verbosity&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1_function_test.html#af69f9db50f85c841c96d87757719fc37">verbosity_level</a> = verbosity::VERBOSE</td></tr>
+<tr class="memdesc:af69f9db50f85c841c96d87757719fc37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the verbosity of the stream out amount. <br /></td></tr>
+<tr class="separator:af69f9db50f85c841c96d87757719fc37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9959c19872e086b9401382cb381f552"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa9959c19872e086b9401382cb381f552"></a>
 unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1_function_test.html#aa9959c19872e086b9401382cb381f552">output_line_length</a> = 60</td></tr>
-<tr class="memdesc:aa9959c19872e086b9401382cb381f552"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of dots that is shown in the printed lines. <br /></td></tr>
+<tr class="memdesc:aa9959c19872e086b9401382cb381f552"><td class="mdescLeft">&#160;</td><td class="mdescRight">The max number of dots that is shown in the printed lines. <br /></td></tr>
 <tr class="separator:aa9959c19872e086b9401382cb381f552"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a3dfca16f618a14bf9eb1ea14defee4d6"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classunittest_1_1_function_test.html#a3dfca16f618a14bf9eb1ea14defee4d6">log</a> (const std::string &amp;str, const verbosity str_verbosity_level) const </td></tr>
+<tr class="separator:a3dfca16f618a14bf9eb1ea14defee4d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename ResultType, typename... ArgTypes&gt;<br />
 class unittest::FunctionTest&lt; ResultType, ArgTypes &gt;</h3>
 
-<p><a class="el" href="classunittest_1_1_function_test.html">FunctionTest</a> unit testing class wich is capable of invoking arbitrary functions with a return value and comparing them to anticipated values. Measures the run-time of the function and writes unit test results to a stream. </p>
+<p><a class="el" href="classunittest_1_1_function_test.html">FunctionTest</a> unit testing class wich is capable of invoking arbitrary functions with a return value and comparing them to anticipated values. Measures the run-time of the function and writes unit test results to a stream. For proper functioning, this class relies on copy assignment of the result types and the argument types. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">ResultType</td><td>Return type of the given function. </td></tr>
+    <tr><td class="paramname">ArgTypes</td><td>Argument types of the given function. </td></tr>
+  </table>
+  </dd>
+</dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a9bb46bed56452a5354848e7d5744c715"></a>
+<a class="anchor" id="a02f22a526440d3b556b84b760aea95a2"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -177,13 +210,13 @@ template&lt;typename ResultType , typename... ArgTypes&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">ComparatorFunctionType&#160;</td>
-          <td class="paramname"><em>comparator</em>, </td>
+          <td class="paramname"><em>comparator</em> = <code>[](const&#160;ResultType&amp;&#160;a,&#160;const&#160;ResultType&amp;&#160;b)&#160;{&#160;return&#160;a&#160;==&#160;b;&#160;}</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">ToStringFunctionType&#160;</td>
-          <td class="paramname"><em>to_string_function</em>, </td>
+          <td class="paramname"><em>to_string_function</em> = <code>[](const&#160;ResultType&amp;&#160;r)&#160;{&#160;std::stringstream&#160;ss;&#160;ss&#160;&lt;&lt;&#160;r;&#160;return&#160;ss.str();&#160;}</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -203,104 +236,11 @@ template&lt;typename ResultType , typename... ArgTypes&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Constructor #1 for the function tester. Use with complex return types. Sets the verbose flag to TRUE. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Constructor for the function tester. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">function</td><td>A function that must return a value. </td></tr>
     <tr><td class="paramname">comparator</td><td>A comparison function that compares the actual invocation-results with given expected results. The comparison function must have the form bool(ResultType, ResultType) or similar. </td></tr>
-    <tr><td class="paramname">to_string_function</td><td>The to-string function for the function's return type. </td></tr>
-    <tr><td class="paramname">os</td><td>An ostream to which the output is streamed. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="addafa5fd128998c358ef14732d4afeb0"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename ResultType , typename... ArgTypes&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classunittest_1_1_function_test.html">unittest::FunctionTest</a>&lt; ResultType, ArgTypes &gt;::<a class="el" href="classunittest_1_1_function_test.html">FunctionTest</a> </td>
-          <td>(</td>
-          <td class="paramtype">FunctionType&#160;</td>
-          <td class="paramname"><em>function</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">ComparatorFunctionType&#160;</td>
-          <td class="paramname"><em>comparator</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
-          <td class="paramname"><em>os</em> = <code>std::cout</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Constructor #2 for the function tester. Use with complex return types. Sets the to-string function for the function's return type to a standard function and sets the verbose flag to FALSE. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">function</td><td>A function that must return a value. </td></tr>
-    <tr><td class="paramname">comparator</td><td>A comparison function that compares the actual invocation-results with given expected results. The comparison function must have the form bool(ResultType, ResultType) or similar. </td></tr>
-    <tr><td class="paramname">os</td><td>An ostream to which the output is streamed. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="a27a92d51dc33cdd08f025555b3d73de8"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename ResultType , typename... ArgTypes&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classunittest_1_1_function_test.html">unittest::FunctionTest</a>&lt; ResultType, ArgTypes &gt;::<a class="el" href="classunittest_1_1_function_test.html">FunctionTest</a> </td>
-          <td>(</td>
-          <td class="paramtype">FunctionType&#160;</td>
-          <td class="paramname"><em>function</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
-          <td class="paramname"><em>os</em> = <code>std::cout</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Constructor #3 for the function tester. Use with simple return types. Sets the comparison function to a simple "==". Sets the to-string function for the function's return type to a standard function and sets the verbose flag to TRUE. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">function</td><td>A function that must return a value. </td></tr>
+    <tr><td class="paramname">to_string_function</td><td>The to-string function for the function's return type. Defaults to { std::stringstream ss; ss &lt;&lt; result; ss.str(); }. </td></tr>
     <tr><td class="paramname">os</td><td>An ostream to which the output is streamed. </td></tr>
   </table>
   </dd>
@@ -309,7 +249,50 @@ template&lt;typename ResultType , typename... ArgTypes&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="abd6a6fe7f829fbedb7fdec63a61ed122"></a>
+<a class="anchor" id="a3dfca16f618a14bf9eb1ea14defee4d6"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ResultType , typename... ArgTypes&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr void <a class="el" href="classunittest_1_1_function_test.html">unittest::FunctionTest</a>&lt; ResultType, ArgTypes &gt;::log </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const verbosity&#160;</td>
+          <td class="paramname"><em>str_verbosity_level</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Writes the given string to the output stream if the given verbosity level. is equal or smaller than the verbosity_level member value. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to be written to a stream; </td></tr>
+    <tr><td class="paramname">str_verbosity_level</td><td>The verbosity level of the given string. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a25ae63b50e7339b313ed11e0ba1e02dc"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -321,7 +304,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::pair&lt;bool, ResultType&gt; <a class="el" href="classunittest_1_1_function_test.html">unittest::FunctionTest</a>&lt; ResultType, ArgTypes &gt;::test </td>
+          <td class="memname"><a class="el" href="structunittest_1_1_function_test_1_1_test_return_type.html">TestReturnType</a> <a class="el" href="classunittest_1_1_function_test.html">unittest::FunctionTest</a>&lt; ResultType, ArgTypes &gt;::test </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname">, </td>
@@ -364,7 +347,7 @@ template&lt;typename ResultType , typename... ArgTypes&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">TestReturnType <a class="el" href="classunittest_1_1_function_test.html">unittest::FunctionTest</a>&lt; ResultType, ArgTypes &gt;::test </td>
+          <td class="memname"><a class="el" href="structunittest_1_1_function_test_1_1_test_return_type.html">TestReturnType</a> <a class="el" href="classunittest_1_1_function_test.html">unittest::FunctionTest</a>&lt; ResultType, ArgTypes &gt;::test </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>test_name</em>, </td>
@@ -393,7 +376,7 @@ template&lt;typename ResultType , typename... ArgTypes&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Unit test on the function that is connected to the tester. Tests whether the return-value of a given function invoked with given parameters is equal to a given value and takes care of possibly occuring exceptions. Also measures the time the function execution takes and writes the results of the test to a given output-stream. Checks also for exceptions and reports them to the output stream. In case of error the object's flag .verbose in conjunction with a valid .result_to_string_function can be used to write more sophisticated output. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Unit test on the function that is connected to the tester. Tests whether the return-value of a given function invoked with given parameters is equal to a given value. Also measures the time the function execution takes and writes the results of the test to a given output-stream. Checks also for exceptions and reports them to the output stream. In case of error the object's flag .verbose in conjunction with a valid result_to_string_function can be used to write more sophisticated output. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">test_name</td><td>A human-readable alias of the test that will be written into the stream. </td></tr>
     <tr><td class="paramname">expected_result</td><td>The anticipated return value of the tested function. </td></tr>
@@ -401,7 +384,7 @@ template&lt;typename ResultType , typename... ArgTypes&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A pair&lt;bool, ResultType&gt;. The first value represents whether the test was successful or not. The second value is a copy of the actual result of the function invocation. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>An object of type FunctionTest&lt;A,B...&gt;::TestReturnType. </dd></dl>
 
 </div>
 </div>
@@ -427,7 +410,7 @@ template&lt;typename ResultType , typename... ArgTypes&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>After running a series of <a class="el" href="classunittest_1_1_function_test.html#abd6a6fe7f829fbedb7fdec63a61ed122">FunctionTest::test()</a> invocations, this method can be called to write summarized information to the output stream. </p><dl class="section return"><dt>Returns</dt><dd>TRUE if all tests until now are passed or no test has been executed. FALSE otherwise. </dd></dl>
+<p>After running a series of <a class="el" href="classunittest_1_1_function_test.html#a25ae63b50e7339b313ed11e0ba1e02dc">FunctionTest::test()</a> invocations, this method can be called to write summarized information to the output stream. </p><dl class="section return"><dt>Returns</dt><dd>TRUE if all tests until now are passed or no test has been executed. FALSE otherwise. </dd></dl>
 
 </div>
 </div>

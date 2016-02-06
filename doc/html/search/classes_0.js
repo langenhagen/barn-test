@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['functiontest',['FunctionTest',['../classunittest_1_1_function_test.html',1,'unittest']]]
+  ['errorcasetype',['ErrorCaseType',['../structunittest_1_1_randomized_function_test_1_1_error_case_type.html',1,'unittest::RandomizedFunctionTest']]]
 ];

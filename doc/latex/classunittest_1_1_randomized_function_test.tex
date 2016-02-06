@@ -1,0 +1,186 @@
+\hypertarget{classunittest_1_1_randomized_function_test}{}\section{unittest\+:\+:Randomized\+Function\+Test$<$ Result\+Type, Arg\+Types $>$ Class Template Reference}
+\label{classunittest_1_1_randomized_function_test}\index{unittest\+::\+Randomized\+Function\+Test$<$ Result\+Type, Arg\+Types $>$@{unittest\+::\+Randomized\+Function\+Test$<$ Result\+Type, Arg\+Types $>$}}
+
+
+{\ttfamily \#include $<$Randomized\+Function\+Test.\+hpp$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structunittest_1_1_randomized_function_test_1_1_error_case_type}{Error\+Case\+Type}
+\begin{DoxyCompactList}\small\item\em Stores information on the circumstances which cause a single test to fail. \end{DoxyCompactList}\item 
+struct \hyperlink{structunittest_1_1_randomized_function_test_1_1_test_return_type}{Test\+Return\+Type}
+\begin{DoxyCompactList}\small\item\em The return type of the \hyperlink{classunittest_1_1_randomized_function_test_a7e4f4b28b4487e4cdd445faf4f4b0ca5}{Randomized\+Function\+Test\+::test()} function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using {\bfseries Args\+Tuple\+Type} = std\+::tuple$<$ Arg\+Types... $>$\hypertarget{classunittest_1_1_randomized_function_test_aa105ce4c0e10c2a0e8cbc38c8d4f6b69}{}\label{classunittest_1_1_randomized_function_test_aa105ce4c0e10c2a0e8cbc38c8d4f6b69}
+
+\item 
+using {\bfseries Duration\+Type} = std\+::chrono\+::microseconds\hypertarget{classunittest_1_1_randomized_function_test_a26d09b29cd58b5896faa1b42b21d5842}{}\label{classunittest_1_1_randomized_function_test_a26d09b29cd58b5896faa1b42b21d5842}
+
+\item 
+using {\bfseries Function\+Type} = const std\+::function$<$ Result\+Type(Arg\+Types...)$>$\hypertarget{classunittest_1_1_randomized_function_test_a6c55e8a95a11f3914e1ff2cd207bf6ef}{}\label{classunittest_1_1_randomized_function_test_a6c55e8a95a11f3914e1ff2cd207bf6ef}
+
+\item 
+using {\bfseries Comparator\+Function\+Type} = const std\+::function$<$ bool(const Result\+Type \&, const Result\+Type \&)$>$\hypertarget{classunittest_1_1_randomized_function_test_ab136f23c2b4fd17371d5f3b646bff9ec}{}\label{classunittest_1_1_randomized_function_test_ab136f23c2b4fd17371d5f3b646bff9ec}
+
+\item 
+using {\bfseries Args\+Creator\+Function\+Type} = const std\+::function$<$ Args\+Tuple\+Type(const unsigned int)$>$\hypertarget{classunittest_1_1_randomized_function_test_af50df2e89d75e2f2d92fad8487cd3502}{}\label{classunittest_1_1_randomized_function_test_af50df2e89d75e2f2d92fad8487cd3502}
+
+\item 
+using {\bfseries Args\+Deleter\+Function\+Type} = const std\+::function$<$ void(const Args\+Tuple\+Type \&)$>$\hypertarget{classunittest_1_1_randomized_function_test_aaf569b896f7c0da587ef4f20d7e8068f}{}\label{classunittest_1_1_randomized_function_test_aaf569b896f7c0da587ef4f20d7e8068f}
+
+\item 
+using {\bfseries Result\+Deleter\+Function\+Type} = const std\+::function$<$ void(const Result\+Type \&)$>$\hypertarget{classunittest_1_1_randomized_function_test_ac9ba57a07a2cc6045f5e6ea666720dfb}{}\label{classunittest_1_1_randomized_function_test_ac9ba57a07a2cc6045f5e6ea666720dfb}
+
+\item 
+using {\bfseries Args\+To\+String\+Function\+Type} = const std\+::function$<$ std\+::string(const Args\+Tuple\+Type \&)$>$\hypertarget{classunittest_1_1_randomized_function_test_a2859de28c0aa157fe363094033618641}{}\label{classunittest_1_1_randomized_function_test_a2859de28c0aa157fe363094033618641}
+
+\item 
+using {\bfseries Result\+To\+String\+Function\+Type} = const std\+::function$<$ std\+::string(const Result\+Type \&)$>$\hypertarget{classunittest_1_1_randomized_function_test_adba388ad83cce9bef714dce11eae7e37}{}\label{classunittest_1_1_randomized_function_test_adba388ad83cce9bef714dce11eae7e37}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classunittest_1_1_randomized_function_test_a4f908f1ed468b9d25fd622d6d1b1794c}{Randomized\+Function\+Test} (Function\+Type function, Function\+Type reference\+\_\+function, Args\+Creator\+Function\+Type argument\+\_\+creator, Comparator\+Function\+Type result\+\_\+comparator=\mbox{[}$\,$\mbox{]}(const Result\+Type \&a, const Result\+Type \&b)\{return a==b;\}, Args\+To\+String\+Function\+Type args\+\_\+to\+\_\+string\+\_\+function=\mbox{[}$\,$\mbox{]}(const Args\+Tuple\+Type \&t)\{std\+::stringstream ss;tuple\+\_\+to\+\_\+stream\+::to\+\_\+stream(ss, t);return ss.\+str();\}, Result\+To\+String\+Function\+Type result\+\_\+to\+\_\+string\+\_\+function=\mbox{[}$\,$\mbox{]}(const Result\+Type \&r)\{std\+::stringstream ss;ss$<$$<$ r;return ss.\+str();\}, Args\+Deleter\+Function\+Type argument\+\_\+deleter=\mbox{[}$\,$\mbox{]}(const Args\+Tuple\+Type \&)\{\}, Result\+Deleter\+Function\+Type result\+\_\+deleter=\mbox{[}$\,$\mbox{]}(const Result\+Type \&)\{\}, std\+::ostream \&os=std\+::cout)
+\item 
+\hyperlink{structunittest_1_1_randomized_function_test_1_1_test_return_type}{Test\+Return\+Type} \hyperlink{classunittest_1_1_randomized_function_test_a7e4f4b28b4487e4cdd445faf4f4b0ca5}{test} (const std\+::string \&test\+\_\+name, const unsigned int n\+\_\+tests)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+verbosity \hyperlink{classunittest_1_1_randomized_function_test_a989821ad8636b95760dce271e6cc6c0c}{verbosity\+\_\+level} = verbosity\+::\+N\+O\+R\+M\+AL\hypertarget{classunittest_1_1_randomized_function_test_a989821ad8636b95760dce271e6cc6c0c}{}\label{classunittest_1_1_randomized_function_test_a989821ad8636b95760dce271e6cc6c0c}
+
+\begin{DoxyCompactList}\small\item\em Defines the verbosity of the stream out amount. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classunittest_1_1_randomized_function_test_a4e422a17416b736809c4b7407af8e89c}{output\+\_\+line\+\_\+length} = 50\hypertarget{classunittest_1_1_randomized_function_test_a4e422a17416b736809c4b7407af8e89c}{}\label{classunittest_1_1_randomized_function_test_a4e422a17416b736809c4b7407af8e89c}
+
+\begin{DoxyCompactList}\small\item\em The max number of dots that is shown in the printed lines. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned int \hyperlink{classunittest_1_1_randomized_function_test_a7b4e3d7e06313af5c9e2b107d4f78077}{n\+\_\+function\+\_\+arguments} = sizeof...(Arg\+Types)\hypertarget{classunittest_1_1_randomized_function_test_a7b4e3d7e06313af5c9e2b107d4f78077}{}\label{classunittest_1_1_randomized_function_test_a7b4e3d7e06313af5c9e2b107d4f78077}
+
+\begin{DoxyCompactList}\small\item\em The number of arguments that the given function and reference function take. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename F , typename Tuple $>$ }\\constexpr auto \hyperlink{classunittest_1_1_randomized_function_test_a85df5b058e65c7c94e2bd79c52aa40e4}{call} (F f, Tuple \&\&t, Duration\+Type \&out\+\_\+duration) const 
+\item 
+constexpr void \hyperlink{classunittest_1_1_randomized_function_test_afac84faf5c7dd347ef03c3cd0e56b57d}{log} (const std\+::string \&str, const verbosity str\+\_\+verbosity\+\_\+level) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Result\+Type, typename... Arg\+Types$>$\\*
+class unittest\+::\+Randomized\+Function\+Test$<$ Result\+Type, Arg\+Types $>$}
+
+\hyperlink{classunittest_1_1_randomized_function_test}{Randomized\+Function\+Test} unit testing class wich is capable of invoking arbitrary functions with a return value and comparing them to results of reference functions. Measures the run-\/time of the function and writes unit test results to a stream. For proper functioning, this class relies on copy assignment of the result types and the argument types. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Result\+Type} & Return type of the given function. \\
+\hline
+{\em Arg\+Types} & Argument types of the given function. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{unittest\+::\+Randomized\+Function\+Test@{unittest\+::\+Randomized\+Function\+Test}!Randomized\+Function\+Test@{Randomized\+Function\+Test}}
+\index{Randomized\+Function\+Test@{Randomized\+Function\+Test}!unittest\+::\+Randomized\+Function\+Test@{unittest\+::\+Randomized\+Function\+Test}}
+\subsubsection[{\texorpdfstring{Randomized\+Function\+Test(\+Function\+Type function, Function\+Type reference\+\_\+function, Args\+Creator\+Function\+Type argument\+\_\+creator, Comparator\+Function\+Type result\+\_\+comparator=[](const Result\+Type \&a, const Result\+Type \&b)\lcurly{}return a==b;\rcurly{}, Args\+To\+String\+Function\+Type args\+\_\+to\+\_\+string\+\_\+function=[](const Args\+Tuple\+Type \&t)\lcurly{}std\+::stringstream ss;tuple\+\_\+to\+\_\+stream\+::to\+\_\+stream(ss, t);return ss.\+str();\rcurly{}, Result\+To\+String\+Function\+Type result\+\_\+to\+\_\+string\+\_\+function=[](const Result\+Type \&r)\lcurly{}std\+::stringstream ss;ss$<$$<$ r;return ss.\+str();\rcurly{}, Args\+Deleter\+Function\+Type argument\+\_\+deleter=[](const Args\+Tuple\+Type \&)\lcurly{}\rcurly{}, Result\+Deleter\+Function\+Type result\+\_\+deleter=[](const Result\+Type \&)\lcurly{}\rcurly{}, std\+::ostream \&os=std\+::cout)}{RandomizedFunctionTest(FunctionType function, FunctionType reference_function, ArgsCreatorFunctionType argument_creator, ComparatorFunctionType result_comparator=[](const ResultType &a, const ResultType &b)\{return a==b;\}, ArgsToStringFunctionType args_to_string_function=[](const ArgsTupleType &t)\{std::stringstream ss;tuple_to_stream::to_stream(ss, t);return ss.str();\}, ResultToStringFunctionType result_to_string_function=[](const ResultType &r)\{std::stringstream ss;ss<< r;return ss.str();\}, ArgsDeleterFunctionType argument_deleter=[](const ArgsTupleType &)\{\}, ResultDeleterFunctionType result_deleter=[](const ResultType &)\{\}, std::ostream &os=std::cout)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result\+Type , typename... Arg\+Types$>$ {\bf unittest\+::\+Randomized\+Function\+Test}$<$ Result\+Type, Arg\+Types $>$\+::{\bf Randomized\+Function\+Test} (
+\begin{DoxyParamCaption}
+\item[{Function\+Type}]{function, }
+\item[{Function\+Type}]{reference\+\_\+function, }
+\item[{Args\+Creator\+Function\+Type}]{argument\+\_\+creator, }
+\item[{Comparator\+Function\+Type}]{result\+\_\+comparator = {\ttfamily \mbox{[}\mbox{]}(const~ResultType\&~a,~const~ResultType\&~b)~\{~return~a~==~b;~\}}, }
+\item[{Args\+To\+String\+Function\+Type}]{args\+\_\+to\+\_\+string\+\_\+function = {\ttfamily \mbox{[}\mbox{]}(const~ArgsTupleType\&~t)~\{~std\+:\+:stringstream~ss;~tuple\+\_\+to\+\_\+stream\+:\+:to\+\_\+stream(ss,~t);~return~ss.str();~\}}, }
+\item[{Result\+To\+String\+Function\+Type}]{result\+\_\+to\+\_\+string\+\_\+function = {\ttfamily \mbox{[}\mbox{]}(const~ResultType\&~r)~\{~std\+:\+:stringstream~ss;~ss~$<$$<$~r;~return~ss.str();~\}}, }
+\item[{Args\+Deleter\+Function\+Type}]{argument\+\_\+deleter = {\ttfamily \mbox{[}\mbox{]}(const~ArgsTupleType\&)~\{\}}, }
+\item[{Result\+Deleter\+Function\+Type}]{result\+\_\+deleter = {\ttfamily \mbox{[}\mbox{]}(const~ResultType\&)~\{\}}, }
+\item[{std\+::ostream \&}]{os = {\ttfamily std\+:\+:cout}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classunittest_1_1_randomized_function_test_a4f908f1ed468b9d25fd622d6d1b1794c}{}\label{classunittest_1_1_randomized_function_test_a4f908f1ed468b9d25fd622d6d1b1794c}
+Constructor for the randomized function tester. Note that the logic of the class relies on proper copy-\/assignment of the Result\+Type values and the individual function invocation arguments. 
+\begin{DoxyParams}{Parameters}
+{\em function} & A function that must return a value. The interface must comply with the template-\/parametrization of the object. The function should, given the same arguments, should produce the same output as the given reference function. \\
+\hline
+{\em reference\+\_\+function} & A reference function with the same interface as the given function, with regard to the parameter list and the return type. The reference function should, given the same arguments, should produce the same output as the given function. \\
+\hline
+{\em argument\+\_\+creator} & A function of type Randomized\+Function\+Test\+::\+Args\+Tuple\+Type(unsigned int) that produces a tuple of function invocation arguments for the given function and reference\+\_\+function. The unsigned int parameter can be used to control the argument creation process. \\
+\hline
+{\em result\+\_\+comparator} & A comparison function for the result types. Defaults to \textquotesingle{}=\textquotesingle{}. \\
+\hline
+{\em args\+\_\+to\+\_\+string\+\_\+function} & A to-\/string function for the argument-\/tuples. Defaults to a standard tuple unpacking and stream-\/out-\/created string for each tuple element. This may not work for arguments for which no stream out operation $<$$<$ can be found. \\
+\hline
+{\em result\+\_\+to\+\_\+string\+\_\+function} & A to-\/string function for the return values of function and reference\+\_\+function. Defaults to \{ std\+::stringstream ss; ss $<$$<$ result; ss.\+str(); \}. This may not work for return types for which no stream out operation $<$$<$ can be found. \\
+\hline
+{\em argument\+\_\+deleter} & Custom deleter for argument tuples. Can be used to free memory which has been previously allocated in the given argument\+\_\+creator, e.\+g. values that are instantiated with new. The deleter will be called on each argument tuple for which a test has passed, but not on arguments on which the test failed. Defaults to a null operation, i.\+e. \{ return; \}. \\
+\hline
+{\em result\+\_\+deleter} & Custom deleter for the given function and reference\+\_\+function return values Can be used to free memory wich has been previously allocated in the given function and reference\+\_\+function, e.\+g. values that are instantiated with new. The deleter will be called on each result value for which a test has passed, but not on return values on which the test failed. Defaults to a null operation, i.\+e. \{ return; \}. \\
+\hline
+{\em os} & An ostream to which the output is streamed. Defaults to std\+::cout. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{unittest\+::\+Randomized\+Function\+Test@{unittest\+::\+Randomized\+Function\+Test}!call@{call}}
+\index{call@{call}!unittest\+::\+Randomized\+Function\+Test@{unittest\+::\+Randomized\+Function\+Test}}
+\subsubsection[{\texorpdfstring{call(\+F f, Tuple \&\&t, Duration\+Type \&out\+\_\+duration) const }{call(F f, Tuple &&t, DurationType &out_duration) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result\+Type , typename... Arg\+Types$>$ template$<$typename F , typename Tuple $>$ constexpr auto {\bf unittest\+::\+Randomized\+Function\+Test}$<$ Result\+Type, Arg\+Types $>$\+::call (
+\begin{DoxyParamCaption}
+\item[{F}]{f, }
+\item[{Tuple \&\&}]{t, }
+\item[{Duration\+Type \&}]{out\+\_\+duration}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{classunittest_1_1_randomized_function_test_a85df5b058e65c7c94e2bd79c52aa40e4}{}\label{classunittest_1_1_randomized_function_test_a85df5b058e65c7c94e2bd79c52aa40e4}
+Calls the given function f with the parameters found in the given tuple and, if f returns a value, also returns this value. 
+\begin{DoxyParams}[1]{Parameters}
+ & {\em f} & A function. \\
+\hline
+ & {\em t} & A tuple containing the parameters for the invocation of f. If f takes no arguments, pass std\+::tuple$<$$>$(). \\
+\hline
+\mbox{\tt out}  & {\em out\+\_\+duration} & A reference to a duration object to which the execution time of the function will be written. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the return value of f. If f\textquotesingle{}s result type would be void, the return type of this function would also be void. 
+\end{DoxyReturn}
+\index{unittest\+::\+Randomized\+Function\+Test@{unittest\+::\+Randomized\+Function\+Test}!log@{log}}
+\index{log@{log}!unittest\+::\+Randomized\+Function\+Test@{unittest\+::\+Randomized\+Function\+Test}}
+\subsubsection[{\texorpdfstring{log(const std\+::string \&str, const verbosity str\+\_\+verbosity\+\_\+level) const }{log(const std::string &str, const verbosity str_verbosity_level) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result\+Type , typename... Arg\+Types$>$ constexpr void {\bf unittest\+::\+Randomized\+Function\+Test}$<$ Result\+Type, Arg\+Types $>$\+::log (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{str, }
+\item[{const verbosity}]{str\+\_\+verbosity\+\_\+level}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{classunittest_1_1_randomized_function_test_afac84faf5c7dd347ef03c3cd0e56b57d}{}\label{classunittest_1_1_randomized_function_test_afac84faf5c7dd347ef03c3cd0e56b57d}
+Writes the given string to the output stream if the given verbosity level. is equal or smaller than the verbosity\+\_\+level member value. 
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to be written to a stream; \\
+\hline
+{\em str\+\_\+verbosity\+\_\+level} & The verbosity level of the given string. \\
+\hline
+\end{DoxyParams}
+\index{unittest\+::\+Randomized\+Function\+Test@{unittest\+::\+Randomized\+Function\+Test}!test@{test}}
+\index{test@{test}!unittest\+::\+Randomized\+Function\+Test@{unittest\+::\+Randomized\+Function\+Test}}
+\subsubsection[{\texorpdfstring{test(const std\+::string \&test\+\_\+name, const unsigned int n\+\_\+tests)}{test(const std::string &test_name, const unsigned int n_tests)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result\+Type , typename... Arg\+Types$>$ {\bf Test\+Return\+Type} {\bf unittest\+::\+Randomized\+Function\+Test}$<$ Result\+Type, Arg\+Types $>$\+::test (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{test\+\_\+name, }
+\item[{const unsigned int}]{n\+\_\+tests}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classunittest_1_1_randomized_function_test_a7e4f4b28b4487e4cdd445faf4f4b0ca5}{}\label{classunittest_1_1_randomized_function_test_a7e4f4b28b4487e4cdd445faf4f4b0ca5}
+Conducts a randomized test series on the function and compares its results to the results of the results of the reference function. The arguments are created with the argument creator specified in the constructor and passed by assignment copy. Also measures the time the function execution takes and writes the results of the test to a given output-\/stream. Checks also for exceptions and reports them to the output stream. If an exception occurs, the test series will be stopped. In case of error the object\textquotesingle{}s flag .verbose in conjunction with a valid result\+\_\+to\+\_\+string\+\_\+function can be used to write more sophisticated output. 
+\begin{DoxyParams}{Parameters}
+{\em test\+\_\+name} & A human-\/readable alias of the test that will be written into the stream. \\
+\hline
+{\em n\+\_\+tests} & The number of tests to be conducted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{structunittest_1_1_randomized_function_test_1_1_test_return_type}{Randomized\+Function\+Test\+::\+Test\+Return\+Type} object that provides general information about the tests and the error cases. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Dev/\+\_\+\+Lib/barn\+\_\+test/Randomized\+Function\+Test.\+hpp\end{DoxyCompactItemize}

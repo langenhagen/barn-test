@@ -102,7 +102,7 @@ namespace unittest {
 
         unsigned int n_tests_                           = 0;                ///< Number of tests.
         unsigned int n_passed_tests_                    = 0;                ///< Number of passed tests.
-        bool is_last_test_passed_                       = true;             ///< indicates whether the last test passed or not.
+        bool is_last_test_passed_                       = true;             ///< Indicates whether the last test passed or not.
         DurationType last_invocation_duration_          = DurationType(0);  ///< The duration of the last function invocation.
         DurationType accumulated_invocation_durations_  = DurationType(0);  ///< The accumulated execution time for all function invocations.
         ResultType last_test_result_;                                       ///< Assignment copy result of the last test.

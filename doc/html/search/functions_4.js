@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['n_5fpassed_5ftests',['n_passed_tests',['../classunittest_1_1_function_test.html#acc025a166bf4840d426e2a9f0b639297',1,'unittest::FunctionTest']]],
-  ['n_5ftests',['n_tests',['../classunittest_1_1_function_test.html#a377bc6b2de27ae65ca82f7f063691745',1,'unittest::FunctionTest']]]
+  ['last_5finvocation_5fduration',['last_invocation_duration',['../classunittest_1_1_function_test.html#a51cf647d3cecad46510a90b488648227',1,'unittest::FunctionTest']]],
+  ['last_5ftest_5fresult',['last_test_result',['../classunittest_1_1_function_test.html#acd04aafd9cb3bb7ee22876e1e3979a11',1,'unittest::FunctionTest']]],
+  ['log',['log',['../classunittest_1_1_function_test.html#a3dfca16f618a14bf9eb1ea14defee4d6',1,'unittest::FunctionTest::log()'],['../classunittest_1_1_randomized_function_test.html#afac84faf5c7dd347ef03c3cd0e56b57d',1,'unittest::RandomizedFunctionTest::log()']]]
 ];

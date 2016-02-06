@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['verbose',['verbose',['../classunittest_1_1_function_test.html#a0eb2680ff0867ff55daffa2b09c90280',1,'unittest::FunctionTest']]]
+  ['erroneous_5fresult',['erroneous_result',['../structunittest_1_1_randomized_function_test_1_1_error_case_type.html#aac3651b4656294eb6dfa1f8997936685',1,'unittest::RandomizedFunctionTest::ErrorCaseType']]],
+  ['error_5fcases',['error_cases',['../structunittest_1_1_randomized_function_test_1_1_test_return_type.html#af80bd2e70186eb9b9752dad1512ebbaa',1,'unittest::RandomizedFunctionTest::TestReturnType']]]
 ];

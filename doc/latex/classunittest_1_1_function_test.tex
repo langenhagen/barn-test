@@ -4,18 +4,34 @@
 
 {\ttfamily \#include $<$Function\+Test.\+hpp$>$}
 
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structunittest_1_1_function_test_1_1_test_return_type}{Test\+Return\+Type}
+\begin{DoxyCompactList}\small\item\em The return type of the \hyperlink{classunittest_1_1_function_test_a25ae63b50e7339b313ed11e0ba1e02dc}{test()} function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using {\bfseries Function\+Type} = const std\+::function$<$ Result\+Type(Arg\+Types...)$>$\hypertarget{classunittest_1_1_function_test_a1e71709c1e6f21e812d11a69894c4b64}{}\label{classunittest_1_1_function_test_a1e71709c1e6f21e812d11a69894c4b64}
+
+\item 
+using {\bfseries Comparator\+Function\+Type} = const std\+::function$<$ bool(const Result\+Type \&, const Result\+Type \&)$>$\hypertarget{classunittest_1_1_function_test_ac60bbd8d8089864b1ac087ce0e092721}{}\label{classunittest_1_1_function_test_ac60bbd8d8089864b1ac087ce0e092721}
+
+\item 
+using {\bfseries To\+String\+Function\+Type} = const std\+::function$<$ std\+::string(const Result\+Type \&)$>$\hypertarget{classunittest_1_1_function_test_aa4fbe91c7839a2485e9b73cdf630be43}{}\label{classunittest_1_1_function_test_aa4fbe91c7839a2485e9b73cdf630be43}
+
+\item 
+using {\bfseries Duration\+Type} = std\+::chrono\+::microseconds\hypertarget{classunittest_1_1_function_test_a08c94f024a60e168319401cf79538919}{}\label{classunittest_1_1_function_test_a08c94f024a60e168319401cf79538919}
+
+\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classunittest_1_1_function_test_a9bb46bed56452a5354848e7d5744c715}{Function\+Test} (Function\+Type function, Comparator\+Function\+Type comparator, To\+String\+Function\+Type to\+\_\+string\+\_\+function, std\+::ostream \&os=std\+::cout)
+\hyperlink{classunittest_1_1_function_test_a02f22a526440d3b556b84b760aea95a2}{Function\+Test} (Function\+Type function, Comparator\+Function\+Type comparator=\mbox{[}$\,$\mbox{]}(const Result\+Type \&a, const Result\+Type \&b)\{return a==b;\}, To\+String\+Function\+Type to\+\_\+string\+\_\+function=\mbox{[}$\,$\mbox{]}(const Result\+Type \&r)\{std\+::stringstream ss;ss$<$$<$ r;return ss.\+str();\}, std\+::ostream \&os=std\+::cout)
 \item 
-\hyperlink{classunittest_1_1_function_test_addafa5fd128998c358ef14732d4afeb0}{Function\+Test} (Function\+Type function, Comparator\+Function\+Type comparator, std\+::ostream \&os=std\+::cout)
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{structunittest_1_1_function_test_1_1_test_return_type}{Test\+Return\+Type} \hyperlink{classunittest_1_1_function_test_a25ae63b50e7339b313ed11e0ba1e02dc}{test} (const std\+::string \&, const T \&, const Arg\+Types \&...) const  =delete
 \item 
-\hyperlink{classunittest_1_1_function_test_a27a92d51dc33cdd08f025555b3d73de8}{Function\+Test} (Function\+Type function, std\+::ostream \&os=std\+::cout)
-\item 
-{\footnotesize template$<$typename T $>$ }\\std\+::pair$<$ bool, Result\+Type $>$ \hyperlink{classunittest_1_1_function_test_abd6a6fe7f829fbedb7fdec63a61ed122}{test} (const std\+::string \&, const T \&, const Arg\+Types \&...) const  =delete
-\item 
-Test\+Return\+Type \hyperlink{classunittest_1_1_function_test_adeb82aea0d7e1975da9f55d5170d31d6}{test} (const std\+::string \&test\+\_\+name, const Result\+Type \&expected\+\_\+result, const Arg\+Types \&...args)
+\hyperlink{structunittest_1_1_function_test_1_1_test_return_type}{Test\+Return\+Type} \hyperlink{classunittest_1_1_function_test_adeb82aea0d7e1975da9f55d5170d31d6}{test} (const std\+::string \&test\+\_\+name, const Result\+Type \&expected\+\_\+result, const Arg\+Types \&...args)
 \item 
 bool \hyperlink{classunittest_1_1_function_test_a1263b315394a9d4d8bf2a7f5e66be9c6}{write\+\_\+test\+\_\+series\+\_\+summary} () const 
 \item 
@@ -28,7 +44,7 @@ unsigned int \hyperlink{classunittest_1_1_function_test_acc025a166bf4840d426e2a9
 bool \hyperlink{classunittest_1_1_function_test_a986ab165971bbf218117ef36a9b6cda0}{is\+\_\+last\+\_\+test\+\_\+passed} () const \hypertarget{classunittest_1_1_function_test_a986ab165971bbf218117ef36a9b6cda0}{}\label{classunittest_1_1_function_test_a986ab165971bbf218117ef36a9b6cda0}
 
 \begin{DoxyCompactList}\small\item\em Returns if the last test whas passed. Also returns T\+R\+UE if no test was executed. \end{DoxyCompactList}\item 
-Test\+Duration\+Type \hyperlink{classunittest_1_1_function_test_a63136c98f5f9f8189ff710112bd55a08}{last\+\_\+invocation\+\_\+duration} () const \hypertarget{classunittest_1_1_function_test_a63136c98f5f9f8189ff710112bd55a08}{}\label{classunittest_1_1_function_test_a63136c98f5f9f8189ff710112bd55a08}
+Duration\+Type \hyperlink{classunittest_1_1_function_test_a51cf647d3cecad46510a90b488648227}{last\+\_\+invocation\+\_\+duration} () const \hypertarget{classunittest_1_1_function_test_a51cf647d3cecad46510a90b488648227}{}\label{classunittest_1_1_function_test_a51cf647d3cecad46510a90b488648227}
 
 \begin{DoxyCompactList}\small\item\em The duration of the last function invocation. \end{DoxyCompactList}\item 
 Result\+Type \hyperlink{classunittest_1_1_function_test_acd04aafd9cb3bb7ee22876e1e3979a11}{last\+\_\+test\+\_\+result} () const \hypertarget{classunittest_1_1_function_test_acd04aafd9cb3bb7ee22876e1e3979a11}{}\label{classunittest_1_1_function_test_acd04aafd9cb3bb7ee22876e1e3979a11}
@@ -37,77 +53,56 @@ Result\+Type \hyperlink{classunittest_1_1_function_test_acd04aafd9cb3bb7ee22876e
 bool \hyperlink{classunittest_1_1_function_test_ac54d10d4dba64b9545ae7b2d30ae3d48}{is\+\_\+all\+\_\+tests\+\_\+passed} () const \hypertarget{classunittest_1_1_function_test_ac54d10d4dba64b9545ae7b2d30ae3d48}{}\label{classunittest_1_1_function_test_ac54d10d4dba64b9545ae7b2d30ae3d48}
 
 \begin{DoxyCompactList}\small\item\em Indicates whether every test so far passed or not. Also returns T\+R\+UE if no test was executed. \end{DoxyCompactList}\item 
-Test\+Duration\+Type \hyperlink{classunittest_1_1_function_test_a09ae97b06e34d144f243dcef00ead1a9}{accumulated\+\_\+invocation\+\_\+durations} () const \hypertarget{classunittest_1_1_function_test_a09ae97b06e34d144f243dcef00ead1a9}{}\label{classunittest_1_1_function_test_a09ae97b06e34d144f243dcef00ead1a9}
+Duration\+Type \hyperlink{classunittest_1_1_function_test_a939a7d00636cae278f2b305f9cc9226f}{accumulated\+\_\+invocation\+\_\+durations} () const \hypertarget{classunittest_1_1_function_test_a939a7d00636cae278f2b305f9cc9226f}{}\label{classunittest_1_1_function_test_a939a7d00636cae278f2b305f9cc9226f}
 
 \begin{DoxyCompactList}\small\item\em The accumulated execution time for all function invocations. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-bool \hyperlink{classunittest_1_1_function_test_a0eb2680ff0867ff55daffa2b09c90280}{verbose} = true\hypertarget{classunittest_1_1_function_test_a0eb2680ff0867ff55daffa2b09c90280}{}\label{classunittest_1_1_function_test_a0eb2680ff0867ff55daffa2b09c90280}
+verbosity \hyperlink{classunittest_1_1_function_test_af69f9db50f85c841c96d87757719fc37}{verbosity\+\_\+level} = verbosity\+::\+V\+E\+R\+B\+O\+SE\hypertarget{classunittest_1_1_function_test_af69f9db50f85c841c96d87757719fc37}{}\label{classunittest_1_1_function_test_af69f9db50f85c841c96d87757719fc37}
 
-\begin{DoxyCompactList}\small\item\em Whether or not show detailed info in case of failures. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Defines the verbosity of the stream out amount. \end{DoxyCompactList}\item 
 unsigned int \hyperlink{classunittest_1_1_function_test_aa9959c19872e086b9401382cb381f552}{output\+\_\+line\+\_\+length} = 60\hypertarget{classunittest_1_1_function_test_aa9959c19872e086b9401382cb381f552}{}\label{classunittest_1_1_function_test_aa9959c19872e086b9401382cb381f552}
 
-\begin{DoxyCompactList}\small\item\em The number of dots that is shown in the printed lines. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The max number of dots that is shown in the printed lines. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+constexpr void \hyperlink{classunittest_1_1_function_test_a3dfca16f618a14bf9eb1ea14defee4d6}{log} (const std\+::string \&str, const verbosity str\+\_\+verbosity\+\_\+level) const 
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 \subsubsection*{template$<$typename Result\+Type, typename... Arg\+Types$>$\\*
 class unittest\+::\+Function\+Test$<$ Result\+Type, Arg\+Types $>$}
 
-\hyperlink{classunittest_1_1_function_test}{Function\+Test} unit testing class wich is capable of invoking arbitrary functions with a return value and comparing them to anticipated values. Measures the run-\/time of the function and writes unit test results to a stream. 
+\hyperlink{classunittest_1_1_function_test}{Function\+Test} unit testing class wich is capable of invoking arbitrary functions with a return value and comparing them to anticipated values. Measures the run-\/time of the function and writes unit test results to a stream. For proper functioning, this class relies on copy assignment of the result types and the argument types. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Result\+Type} & Return type of the given function. \\
+\hline
+{\em Arg\+Types} & Argument types of the given function. \\
+\hline
+\end{DoxyTemplParams}
+
 
 \subsection{Constructor \& Destructor Documentation}
 \index{unittest\+::\+Function\+Test@{unittest\+::\+Function\+Test}!Function\+Test@{Function\+Test}}
 \index{Function\+Test@{Function\+Test}!unittest\+::\+Function\+Test@{unittest\+::\+Function\+Test}}
-\subsubsection[{\texorpdfstring{Function\+Test(\+Function\+Type function, Comparator\+Function\+Type comparator, To\+String\+Function\+Type to\+\_\+string\+\_\+function, std\+::ostream \&os=std\+::cout)}{FunctionTest(FunctionType function, ComparatorFunctionType comparator, ToStringFunctionType to_string_function, std::ostream &os=std::cout)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result\+Type , typename... Arg\+Types$>$ {\bf unittest\+::\+Function\+Test}$<$ Result\+Type, Arg\+Types $>$\+::{\bf Function\+Test} (
+\subsubsection[{\texorpdfstring{Function\+Test(\+Function\+Type function, Comparator\+Function\+Type comparator=[](const Result\+Type \&a, const Result\+Type \&b)\lcurly{}return a==b;\rcurly{}, To\+String\+Function\+Type to\+\_\+string\+\_\+function=[](const Result\+Type \&r)\lcurly{}std\+::stringstream ss;ss$<$$<$ r;return ss.\+str();\rcurly{}, std\+::ostream \&os=std\+::cout)}{FunctionTest(FunctionType function, ComparatorFunctionType comparator=[](const ResultType &a, const ResultType &b)\{return a==b;\}, ToStringFunctionType to_string_function=[](const ResultType &r)\{std::stringstream ss;ss<< r;return ss.str();\}, std::ostream &os=std::cout)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result\+Type , typename... Arg\+Types$>$ {\bf unittest\+::\+Function\+Test}$<$ Result\+Type, Arg\+Types $>$\+::{\bf Function\+Test} (
 \begin{DoxyParamCaption}
 \item[{Function\+Type}]{function, }
-\item[{Comparator\+Function\+Type}]{comparator, }
-\item[{To\+String\+Function\+Type}]{to\+\_\+string\+\_\+function, }
+\item[{Comparator\+Function\+Type}]{comparator = {\ttfamily \mbox{[}\mbox{]}(const~ResultType\&~a,~const~ResultType\&~b)~\{~return~a~==~b;~\}}, }
+\item[{To\+String\+Function\+Type}]{to\+\_\+string\+\_\+function = {\ttfamily \mbox{[}\mbox{]}(const~ResultType\&~r)~\{~std\+:\+:stringstream~ss;~ss~$<$$<$~r;~return~ss.str();~\}}, }
 \item[{std\+::ostream \&}]{os = {\ttfamily std\+:\+:cout}}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classunittest_1_1_function_test_a9bb46bed56452a5354848e7d5744c715}{}\label{classunittest_1_1_function_test_a9bb46bed56452a5354848e7d5744c715}
-Constructor \#1 for the function tester. Use with complex return types. Sets the verbose flag to T\+R\+UE. 
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classunittest_1_1_function_test_a02f22a526440d3b556b84b760aea95a2}{}\label{classunittest_1_1_function_test_a02f22a526440d3b556b84b760aea95a2}
+Constructor for the function tester. 
 \begin{DoxyParams}{Parameters}
 {\em function} & A function that must return a value. \\
 \hline
 {\em comparator} & A comparison function that compares the actual invocation-\/results with given expected results. The comparison function must have the form bool(\+Result\+Type, Result\+Type) or similar. \\
 \hline
-{\em to\+\_\+string\+\_\+function} & The to-\/string function for the function\textquotesingle{}s return type. \\
-\hline
-{\em os} & An ostream to which the output is streamed. \\
-\hline
-\end{DoxyParams}
-\index{unittest\+::\+Function\+Test@{unittest\+::\+Function\+Test}!Function\+Test@{Function\+Test}}
-\index{Function\+Test@{Function\+Test}!unittest\+::\+Function\+Test@{unittest\+::\+Function\+Test}}
-\subsubsection[{\texorpdfstring{Function\+Test(\+Function\+Type function, Comparator\+Function\+Type comparator, std\+::ostream \&os=std\+::cout)}{FunctionTest(FunctionType function, ComparatorFunctionType comparator, std::ostream &os=std::cout)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result\+Type , typename... Arg\+Types$>$ {\bf unittest\+::\+Function\+Test}$<$ Result\+Type, Arg\+Types $>$\+::{\bf Function\+Test} (
-\begin{DoxyParamCaption}
-\item[{Function\+Type}]{function, }
-\item[{Comparator\+Function\+Type}]{comparator, }
-\item[{std\+::ostream \&}]{os = {\ttfamily std\+:\+:cout}}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classunittest_1_1_function_test_addafa5fd128998c358ef14732d4afeb0}{}\label{classunittest_1_1_function_test_addafa5fd128998c358ef14732d4afeb0}
-Constructor \#2 for the function tester. Use with complex return types. Sets the to-\/string function for the function\textquotesingle{}s return type to a standard function and sets the verbose flag to F\+A\+L\+SE. 
-\begin{DoxyParams}{Parameters}
-{\em function} & A function that must return a value. \\
-\hline
-{\em comparator} & A comparison function that compares the actual invocation-\/results with given expected results. The comparison function must have the form bool(\+Result\+Type, Result\+Type) or similar. \\
-\hline
-{\em os} & An ostream to which the output is streamed. \\
-\hline
-\end{DoxyParams}
-\index{unittest\+::\+Function\+Test@{unittest\+::\+Function\+Test}!Function\+Test@{Function\+Test}}
-\index{Function\+Test@{Function\+Test}!unittest\+::\+Function\+Test@{unittest\+::\+Function\+Test}}
-\subsubsection[{\texorpdfstring{Function\+Test(\+Function\+Type function, std\+::ostream \&os=std\+::cout)}{FunctionTest(FunctionType function, std::ostream &os=std::cout)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result\+Type , typename... Arg\+Types$>$ {\bf unittest\+::\+Function\+Test}$<$ Result\+Type, Arg\+Types $>$\+::{\bf Function\+Test} (
-\begin{DoxyParamCaption}
-\item[{Function\+Type}]{function, }
-\item[{std\+::ostream \&}]{os = {\ttfamily std\+:\+:cout}}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classunittest_1_1_function_test_a27a92d51dc33cdd08f025555b3d73de8}{}\label{classunittest_1_1_function_test_a27a92d51dc33cdd08f025555b3d73de8}
-Constructor \#3 for the function tester. Use with simple return types. Sets the comparison function to a simple \char`\"{}==\char`\"{}. Sets the to-\/string function for the function\textquotesingle{}s return type to a standard function and sets the verbose flag to T\+R\+UE. 
-\begin{DoxyParams}{Parameters}
-{\em function} & A function that must return a value. \\
+{\em to\+\_\+string\+\_\+function} & The to-\/string function for the function\textquotesingle{}s return type. Defaults to \{ std\+::stringstream ss; ss $<$$<$ result; ss.\+str(); \}. \\
 \hline
 {\em os} & An ostream to which the output is streamed. \\
 \hline
@@ -115,25 +110,40 @@ Constructor \#3 for the function tester. Use with simple return types. Sets the 
 
 
 \subsection{Member Function Documentation}
+\index{unittest\+::\+Function\+Test@{unittest\+::\+Function\+Test}!log@{log}}
+\index{log@{log}!unittest\+::\+Function\+Test@{unittest\+::\+Function\+Test}}
+\subsubsection[{\texorpdfstring{log(const std\+::string \&str, const verbosity str\+\_\+verbosity\+\_\+level) const }{log(const std::string &str, const verbosity str_verbosity_level) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result\+Type , typename... Arg\+Types$>$ constexpr void {\bf unittest\+::\+Function\+Test}$<$ Result\+Type, Arg\+Types $>$\+::log (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{str, }
+\item[{const verbosity}]{str\+\_\+verbosity\+\_\+level}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{classunittest_1_1_function_test_a3dfca16f618a14bf9eb1ea14defee4d6}{}\label{classunittest_1_1_function_test_a3dfca16f618a14bf9eb1ea14defee4d6}
+Writes the given string to the output stream if the given verbosity level. is equal or smaller than the verbosity\+\_\+level member value. 
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to be written to a stream; \\
+\hline
+{\em str\+\_\+verbosity\+\_\+level} & The verbosity level of the given string. \\
+\hline
+\end{DoxyParams}
 \index{unittest\+::\+Function\+Test@{unittest\+::\+Function\+Test}!test@{test}}
 \index{test@{test}!unittest\+::\+Function\+Test@{unittest\+::\+Function\+Test}}
-\subsubsection[{\texorpdfstring{test(const std\+::string \&, const T \&, const Arg\+Types \&...) const  =delete}{test(const std::string &, const T &, const ArgTypes &...) const  =delete}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result\+Type , typename... Arg\+Types$>$ template$<$typename T $>$ std\+::pair$<$bool, Result\+Type$>$ {\bf unittest\+::\+Function\+Test}$<$ Result\+Type, Arg\+Types $>$\+::test (
+\subsubsection[{\texorpdfstring{test(const std\+::string \&, const T \&, const Arg\+Types \&...) const  =delete}{test(const std::string &, const T &, const ArgTypes &...) const  =delete}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result\+Type , typename... Arg\+Types$>$ template$<$typename T $>$ {\bf Test\+Return\+Type} {\bf unittest\+::\+Function\+Test}$<$ Result\+Type, Arg\+Types $>$\+::test (
 \begin{DoxyParamCaption}
 \item[{const std\+::string \&}]{, }
 \item[{const T \&}]{, }
 \item[{const Arg\+Types \&}]{...}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [delete]}}\hypertarget{classunittest_1_1_function_test_abd6a6fe7f829fbedb7fdec63a61ed122}{}\label{classunittest_1_1_function_test_abd6a6fe7f829fbedb7fdec63a61ed122}
+) const\hspace{0.3cm}{\ttfamily [delete]}}\hypertarget{classunittest_1_1_function_test_a25ae63b50e7339b313ed11e0ba1e02dc}{}\label{classunittest_1_1_function_test_a25ae63b50e7339b313ed11e0ba1e02dc}
 This deleted function prevents callers from handing expected result of wrong type. This prevents false negatives through conversion errors, like double to int truncation. Consider a test on a function int()\{ return 1 \}\+: tester.\+test(\char`\"{}1\char`\"{}, 1.\+2); won\textquotesingle{}t compile (otherwise, it would convert to 1 which then yielded OK) tester.\+test(\char`\"{}2\char`\"{}, 1); compiles. \index{unittest\+::\+Function\+Test@{unittest\+::\+Function\+Test}!test@{test}}
 \index{test@{test}!unittest\+::\+Function\+Test@{unittest\+::\+Function\+Test}}
-\subsubsection[{\texorpdfstring{test(const std\+::string \&test\+\_\+name, const Result\+Type \&expected\+\_\+result, const Arg\+Types \&...\+args)}{test(const std::string &test_name, const ResultType &expected_result, const ArgTypes &...args)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result\+Type , typename... Arg\+Types$>$ Test\+Return\+Type {\bf unittest\+::\+Function\+Test}$<$ Result\+Type, Arg\+Types $>$\+::test (
+\subsubsection[{\texorpdfstring{test(const std\+::string \&test\+\_\+name, const Result\+Type \&expected\+\_\+result, const Arg\+Types \&...\+args)}{test(const std::string &test_name, const ResultType &expected_result, const ArgTypes &...args)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result\+Type , typename... Arg\+Types$>$ {\bf Test\+Return\+Type} {\bf unittest\+::\+Function\+Test}$<$ Result\+Type, Arg\+Types $>$\+::test (
 \begin{DoxyParamCaption}
 \item[{const std\+::string \&}]{test\+\_\+name, }
 \item[{const Result\+Type \&}]{expected\+\_\+result, }
 \item[{const Arg\+Types \&...}]{args}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classunittest_1_1_function_test_adeb82aea0d7e1975da9f55d5170d31d6}{}\label{classunittest_1_1_function_test_adeb82aea0d7e1975da9f55d5170d31d6}
-Unit test on the function that is connected to the tester. Tests whether the return-\/value of a given function invoked with given parameters is equal to a given value and takes care of possibly occuring exceptions. Also measures the time the function execution takes and writes the results of the test to a given output-\/stream. Checks also for exceptions and reports them to the output stream. In case of error the object\textquotesingle{}s flag .verbose in conjunction with a valid .result\+\_\+to\+\_\+string\+\_\+function can be used to write more sophisticated output. 
+Unit test on the function that is connected to the tester. Tests whether the return-\/value of a given function invoked with given parameters is equal to a given value. Also measures the time the function execution takes and writes the results of the test to a given output-\/stream. Checks also for exceptions and reports them to the output stream. In case of error the object\textquotesingle{}s flag .verbose in conjunction with a valid result\+\_\+to\+\_\+string\+\_\+function can be used to write more sophisticated output. 
 \begin{DoxyParams}{Parameters}
 {\em test\+\_\+name} & A human-\/readable alias of the test that will be written into the stream. \\
 \hline
@@ -143,7 +153,7 @@ Unit test on the function that is connected to the tester. Tests whether the ret
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-A pair$<$bool, Result\+Type$>$. The first value represents whether the test was successful or not. The second value is a copy of the actual result of the function invocation. 
+An object of type Function\+Test$<$\+A,\+B...$>$\+::\+Test\+Return\+Type. 
 \end{DoxyReturn}
 \index{unittest\+::\+Function\+Test@{unittest\+::\+Function\+Test}!write\+\_\+test\+\_\+series\+\_\+summary@{write\+\_\+test\+\_\+series\+\_\+summary}}
 \index{write\+\_\+test\+\_\+series\+\_\+summary@{write\+\_\+test\+\_\+series\+\_\+summary}!unittest\+::\+Function\+Test@{unittest\+::\+Function\+Test}}
@@ -152,7 +162,7 @@ A pair$<$bool, Result\+Type$>$. The first value represents whether the test was 
 {}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classunittest_1_1_function_test_a1263b315394a9d4d8bf2a7f5e66be9c6}{}\label{classunittest_1_1_function_test_a1263b315394a9d4d8bf2a7f5e66be9c6}
-After running a series of \hyperlink{classunittest_1_1_function_test_abd6a6fe7f829fbedb7fdec63a61ed122}{Function\+Test\+::test()} invocations, this method can be called to write summarized information to the output stream. \begin{DoxyReturn}{Returns}
+After running a series of \hyperlink{classunittest_1_1_function_test_a25ae63b50e7339b313ed11e0ba1e02dc}{Function\+Test\+::test()} invocations, this method can be called to write summarized information to the output stream. \begin{DoxyReturn}{Returns}
 T\+R\+UE if all tests until now are passed or no test has been executed. F\+A\+L\+SE otherwise. 
 \end{DoxyReturn}
 

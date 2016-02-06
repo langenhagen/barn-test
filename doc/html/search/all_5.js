@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['output_5fline_5flength',['output_line_length',['../classunittest_1_1_function_test.html#aa9959c19872e086b9401382cb381f552',1,'unittest::FunctionTest']]]
+  ['invocation_5fduration',['invocation_duration',['../structunittest_1_1_function_test_1_1_test_return_type.html#a4c8edd888a5c8ffb260323d76d8195cb',1,'unittest::FunctionTest::TestReturnType']]],
+  ['is_5fall_5ftests_5fpassed',['is_all_tests_passed',['../classunittest_1_1_function_test.html#ac54d10d4dba64b9545ae7b2d30ae3d48',1,'unittest::FunctionTest::is_all_tests_passed()'],['../structunittest_1_1_randomized_function_test_1_1_test_return_type.html#a197fb8ecb9eea76dfb418ad8e58f5a9b',1,'unittest::RandomizedFunctionTest::TestReturnType::is_all_tests_passed()']]],
+  ['is_5flast_5ftest_5fpassed',['is_last_test_passed',['../classunittest_1_1_function_test.html#a986ab165971bbf218117ef36a9b6cda0',1,'unittest::FunctionTest']]],
+  ['is_5fpassed',['is_passed',['../structunittest_1_1_function_test_1_1_test_return_type.html#a51c06dbf82dad530855abb24529896d3',1,'unittest::FunctionTest::TestReturnType']]]
 ];
