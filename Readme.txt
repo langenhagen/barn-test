@@ -7,13 +7,14 @@ for concise, simple and small scale unit testing.
 
 
 author: langenhagen (barn07@web.de)
-version: 160126
+version: 160205
 *******************************************************************
 
 CONTENTS:
     0. OVERVIEW
     1. USAGE
         1.1 FunctionTest
+        1.2 RandomizedFunctionTest
     2. TODO
     3. HISTORY
 
@@ -21,10 +22,12 @@ CONTENTS:
 0. OVERVIEW #######################################################################################
 ###################################################################################################
   
-The Solution holds 1 class:
+The Solution holds 4 modules:
 
-    FunctionTest        :       function correctness tests
-   
+    FunctionTest                :       function correctness tests
+    RandomizedFunctionTest      :       function tested against reference function multiple times
+    verbosity                   :       enum class for specifying the verbosity of the logging.
+    tuple_to_stream             :       utility function for writing tuples to an ostream
    
     - The doxygen documentation can be found in the folder "doc"
     
@@ -70,9 +73,76 @@ C c;
 
 auto fun = [&obj = c](int i, int j) { return obj.foo(i, j); };
 
-FunctionTest<int, int, int> tester( fun);
+unittest::FunctionTest<int, int, int> tester( fun);
 
 // ...
+
+
+1.2 RandomizedFunctionTest ########################################################################
+
+//A simple example
+
+#include <barn_test/RandomizedFunctionTest.hpp>
+
+
+string fun(float f, int i);             // function to be tested
+string reference_fun(float f, int i);   // reference function
+
+// ...
+
+// argument tuple creation function - aways takes an unsigned int as argument
+auto arg_creator = [](unsigned int i) { return tuple<float, int>(rand() % 10 *0.1f, rand() % 100); };
+
+unittest::RandomizedFunctionTest<string, float, int> tester(fun, reference_fun, arg_creator);
+
+auto test_result = tester.test("Test Run 1", 100);
+
+// ...
+
+
+// A complex example of the usage of the RandomizedFunctionTest is shown in the following.
+// It covers complex types with custom equality functions, custom to-string functions and
+// dynamic memory allocation and deallocation for arguments and result types:
+
+using result_t = tuple<int, int*>;
+using arg_tuple_t = tuple<float, int*>;
+
+// function to be tested - beware: dynamically allocates memory
+result_t fun(float f, int* i) {
+    int* j = new int(2 * (*i) + f);
+    return result_t(*i, j);
+}
+
+// reference function - beware: dynamically allocates memory
+result_t reference_fun(float f, int* i) {
+    int* j = new int(2 * (*i) + f);
+    return result_t(*i, j);
+}
+
+// ...
+
+auto arg_creator        = [](unsigned int i) { return arg_tuple_t(rand() % 10 * 0.1f, new int(rand() % 10)); };
+auto result_comparator  = [](const result_t& a, const result_t& b) { return get<0>(a) == get<0>(b) && *get<1>(a) == *get<1>(b); };
+auto args_to_string     = []( const arg_tuple_t& t) { stringstream s; s << "(" << get<0>(t) << ", " << *get<1>(t) << ")"; return s.str(); };
+auto result_to_string   = []( const result_t& r){ stringstream s; s << "(" << get<0>(r) << ", " << *get<1>(r) << ", " << ")"; return s.str(); };
+auto arg_deleter        = [](const arg_tuple_t& t) { delete get<1>(t); };
+auto result_deleter     = [](const result_t& r) { delete get<1>(r); };
+
+unittest::RandomizedFunctionTest<result_t, float, int*> tester(
+    fun,
+    reference_fun,
+    arg_creator,
+    result_comparator,
+    args_to_string,
+    result_to_string,
+    arg_deleter,
+    result_deleter);
+
+// ...
+
+
+// To test a method on an object, I'm afraid you have to wrap the method call into a lambda.
+
 
 
 2. TODO ###########################################################################################
@@ -90,13 +160,17 @@ TODO test functions for speed
     
 TODO test-function that aggregates all test functions. test_function(...)
 
-TODO review FunctionTest.hpp
 
 TODO implement test_FunctionTest.cpp
 
        
 3. HISTORY ########################################################################################
 ###################################################################################################    
+
+
+160205      - added RandomizedFunctionTest for randomized function tests
+            - removed helper functions for FunctionTest, added internal structs instead.
+            - langenhagen: added a version of my tuple_to_stream for tuple printing.
 
 160126      - added FunctionTest::write_test_series_summary()
             - changed FunctionTest::test() return type and added helper functions.
