@@ -77,7 +77,7 @@ RandomizedFunctionTest<result_t, float, int*> tester(
 /*
 /*
 /* @author langenhagen
-/* @version 160206
+/* @version 160218
 /*****************************************************************************/
 #pragma once
 
@@ -365,6 +365,24 @@ namespace unittest {
 
             return ret;
         }
+
+
+        /** Conducts a randomized test series on the function and compares its results
+        to the results of the results of the reference function.
+        The arguments are created with the argument creator specified in the constructor
+        and passed by assignment copy.
+        Also measures the time the function execution takes and writes the results of the test to a given output-stream.
+        Checks also for exceptions and reports them to the output stream. If an exception occurs,
+        the test series will be stopped.
+        In case of error the object's flag .verbose in conjunction with a valid result_to_string_function
+        can be used to write more sophisticated output.
+        @param n_tests The number of tests to be conducted.
+        @return A RandomizedFunctionTest::TestReturnType object that provides general information about the tests and the error cases.
+        */
+        TestReturnType test( const unsigned int n_tests) {
+            return test( "", n_tests);
+        }
+
 
     protected: // helpers
 

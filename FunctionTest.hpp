@@ -46,7 +46,7 @@ FunctionTest<int, int, int> tester( fun);
 /*
 /*
 /* @author langenhagen
-/* @version 160206
+/* @version 160218
 /*****************************************************************************/
 #pragma once
 
@@ -221,6 +221,21 @@ namespace unittest {
             }
 
             return ret;
+        }
+
+
+        /** Unit test on the function that is connected to the tester.
+        Tests whether the return-value of a given function invoked with given parameters is equal to a given value.
+        Also measures the time the function execution takes and writes the results of the test to a given output-stream.
+        Checks also for exceptions and reports them to the output stream.
+        In case of error the object's flag .verbose in conjunction with a valid result_to_string_function
+        can be used to write more sophisticated output.
+        @param expected_result The anticipated return value of the tested function.
+        @param args The arguments that will be passed to the function on invocation.
+        @return An object of type FunctionTest<A,B...>::TestReturnType.
+        */
+        TestReturnType test( const ResultType& expected_result, const ArgTypes&... args) {
+            return test( itos(n_tests()), expected_result, args... );
         }
 
         
