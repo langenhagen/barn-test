@@ -1,8 +1,8 @@
 *******************************************************************
-README 
+README
 for the package barn_test.
 
-The package barn_test contains portable tools 
+The package barn_test contains portable tools
 for concise, simple and small scale unit testing.
 
 
@@ -21,17 +21,17 @@ CONTENTS:
 
 0. OVERVIEW #######################################################################################
 ###################################################################################################
-  
+
 The Solution holds 4 modules:
 
     FunctionTest                :       function correctness tests
     RandomizedFunctionTest      :       function tested against reference function multiple times
     verbosity                   :       enum class for specifying the verbosity of the logging.
     tuple_to_stream             :       utility function for writing tuples to an ostream
-   
+
     - The doxygen documentation can be found in the folder "doc"
-    
-    
+
+
 1. USAGE ##########################################################################################
 ###################################################################################################
 
@@ -66,7 +66,7 @@ tester.write_test_series_summary();
 // To test a method on an object, I'm afraid you have to wrap the method call into a lambda:
 
 struct C {
-    int foo(int i, int j) { return i + j; }  //< method to be tested 
+    int foo(int i, int j) { return i + j; }  //< method to be tested
 };
 
 C c;
@@ -146,26 +146,26 @@ unittest::RandomizedFunctionTest<result_t, float, int*> tester(
 
 
 2. TODO ###########################################################################################
-###################################################################################################  
+###################################################################################################
 
 
 TODO test-functions for functions with side-effects. class StatusTest;
     if it really pays off
     lookat: http://stackoverflow.com/questions/16868129/how-to-store-variadic-template-arguments
-    
+
 TODO test-functions that test for exceptions. test_exceptions(...)
 
 TODO test functions for speed
     lookat: http://stackoverflow.com/questions/255645/how-can-i-count-operations-in-c
-    
+
 TODO test-function that aggregates all test functions. test_function(...)
 
 
 TODO implement test_FunctionTest.cpp
 
-       
+
 3. HISTORY ########################################################################################
-###################################################################################################    
+###################################################################################################
 
 
 160205      - added RandomizedFunctionTest for randomized function tests
@@ -178,6 +178,6 @@ TODO implement test_FunctionTest.cpp
 
 160121      - some fine grained fixes on the FunctionTest class
             - enforced correct result type on FunctionTest::test()
-            
+
 
 # END OF FILE #
